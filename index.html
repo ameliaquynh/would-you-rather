@@ -128,12 +128,14 @@
 
   .color-grid {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 16px 20px;
     margin-bottom: 8px;
   }
 
   .color-field {
-    flex: 1;
+    flex: 1 1 40%;
+    min-width: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -460,6 +462,14 @@
           <input type="color" id="textColor" value="#ff5f7e" />
           <label for="textColor">Words</label>
         </div>
+        <div class="color-field">
+          <input type="color" id="bubbleAColor" value="#ff5f7e" />
+          <label for="bubbleAColor">Bubble A</label>
+        </div>
+        <div class="color-field">
+          <input type="color" id="bubbleBColor" value="#00c6ff" />
+          <label for="bubbleBColor">Bubble B</label>
+        </div>
       </div>
 
       <div class="section-label">Add a Category</div>
@@ -564,6 +574,120 @@
     { cat: "food", a: "never eat vegetables again", b: "never eat dessert again" },
     { cat: "fantasy", a: "control the weather ⛈️", b: "control people's dreams 💭" },
     { cat: "fantasy", a: "be a superhero with no cape", b: "be a supervillain who's actually nice" },
+
+    // --- Silly ---
+    { cat: "silly", a: "sneeze confetti every time you sneeze 🎊", b: "hiccup bubbles every time you hiccup 🫧" },
+    { cat: "silly", a: "have hair made of cotton candy 🍬", b: "have hair made of seaweed 🌿" },
+    { cat: "silly", a: "wear shoes that squeak like a duck forever 🦆", b: "wear a jacket that tells jokes out loud all day" },
+    { cat: "silly", a: "laugh like a hyena 😆", b: "snort like a pig every time you laugh 🐷" },
+    { cat: "silly", a: "have feet for hands", b: "have hands for feet" },
+    { cat: "silly", a: "be tickled for an hour straight", b: "have hiccups that never stop" },
+    { cat: "silly", a: "talk backwards all day", b: "talk in a robot voice all day 🤖" },
+    { cat: "silly", a: "have jelly for bones", b: "have rubber for skin" },
+    { cat: "silly", a: "wear a chicken costume every day 🐔", b: "wear a superhero cape every day 🦸" },
+    { cat: "silly", a: "sneeze glitter ✨", b: "cry maple syrup 🍁" },
+    { cat: "silly", a: "have a horn that honks when you're surprised 📯", b: "have a light that flashes when you're embarrassed 💡" },
+    { cat: "silly", a: "bounce everywhere like a kangaroo 🦘", b: "slide everywhere like a penguin 🐧" },
+    { cat: "silly", a: "have a voice that sounds like a cartoon character", b: "have a laugh that sounds like a seal 🦭" },
+    { cat: "silly", a: "wear a Halloween costume to school every day 🎃", b: "wear pajamas to school every day 🩱" },
+
+    // --- Fantasy ---
+    { cat: "fantasy", a: "have a magic wand that grants any wish 🪄", b: "have a flying carpet that goes anywhere 🧞" },
+    { cat: "fantasy", a: "be a powerful wizard 🧙", b: "be a legendary superhero 🦸" },
+    { cat: "fantasy", a: "live in a floating castle in the sky ☁️", b: "live in a glowing castle under the sea 🏰" },
+    { cat: "fantasy", a: "get three wishes that disappear after one use", b: "get one wish you can use forever" },
+    { cat: "fantasy", a: "time travel to see the dinosaurs 🦕", b: "time travel to see the future 🚀" },
+    { cat: "fantasy", a: "be a mermaid living in the ocean 🧜", b: "be a fairy living in a flower garden 🧚" },
+    { cat: "fantasy", a: "have a genie who grants your wishes 🧞", b: "have a dragon who gives you rides 🐉" },
+    { cat: "fantasy", a: "live inside your favorite video game 🎮", b: "live inside your favorite movie 🎬" },
+    { cat: "fantasy", a: "have a cape that turns you invisible", b: "have a ring that grants wishes 💍" },
+    { cat: "fantasy", a: "be the hero in a fairy tale", b: "be the hero in a space adventure" },
+    { cat: "fantasy", a: "own a magic paintbrush that brings your drawings to life 🎨", b: "own a magic book you can climb into 📖" },
+    { cat: "fantasy", a: "be able to read minds", b: "be able to see into the future" },
+    { cat: "fantasy", a: "have a spellbook that always works", b: "have a wand that sometimes backfires" },
+    { cat: "fantasy", a: "discover a hidden door to a magical world 🚪", b: "discover a hidden treasure map 🗺️" },
+
+    // --- Superpowers ---
+    { cat: "powers", a: "be able to fly for the rest of your life 🕊️", b: "be invisible for the rest of your life" },
+    { cat: "powers", a: "control time ⏳", b: "control minds 🧠" },
+    { cat: "powers", a: "shrink to the size of an ant 🐜", b: "grow to the size of a building 🏢" },
+    { cat: "powers", a: "control fire 🔥", b: "control water 🌊" },
+    { cat: "powers", a: "control electricity ⚡", b: "control ice ❄️" },
+    { cat: "powers", a: "have super healing", b: "never get tired" },
+    { cat: "powers", a: "breathe underwater forever 🫧", b: "breathe in space without a suit 🌌" },
+    { cat: "powers", a: "have the strength of 100 people 💪", b: "have the speed of a rocket 🚀" },
+    { cat: "powers", a: "turn into any animal at will 🐾", b: "turn into any object at will" },
+    { cat: "powers", a: "have a force field that protects you 🛡️", b: "have laser vision 👁️" },
+    { cat: "powers", a: "make plants grow instantly 🌱", b: "command animals to do what you say" },
+    { cat: "powers", a: "have unbreakable skin", b: "have unstoppable strength" },
+    { cat: "powers", a: "fly as fast as a jet ✈️", b: "run as fast as a cheetah 🐆" },
+    { cat: "powers", a: "talk to machines 🤖", b: "talk to ghosts 👻" },
+
+    // --- Food ---
+    { cat: "food", a: "eat pizza every day for a year 🍕", b: "eat tacos every day for a year 🌮" },
+    { cat: "food", a: "never eat chocolate again 🍫", b: "never eat chips again 🍟" },
+    { cat: "food", a: "eat spaghetti with syrup on it 🍝", b: "eat cereal with ketchup on it 🥣" },
+    { cat: "food", a: "only eat foods that are red 🍎", b: "only eat foods that are green 🥦" },
+    { cat: "food", a: "eat 100 grapes in one sitting 🍇", b: "eat one super spicy pepper 🌶️" },
+    { cat: "food", a: "drink a smoothie made of veggies you hate", b: "eat a plate of your least favorite food" },
+    { cat: "food", a: "never eat fast food again 🍔", b: "never eat dessert at a restaurant again 🍰" },
+    { cat: "food", a: "eat a peanut butter and pickle sandwich 🥪", b: "eat a mayo and marshmallow sandwich" },
+    { cat: "food", a: "only eat round-shaped foods ⚪", b: "only eat square-shaped foods ⬜" },
+    { cat: "food", a: "have unlimited pizza with no toppings", b: "have unlimited toppings but no pizza" },
+    { cat: "food", a: "eat breakfast food for dinner every night 🥞", b: "eat dinner food for breakfast every morning" },
+    { cat: "food", a: "never drink soda again 🥤", b: "never eat candy again 🍬" },
+    { cat: "food", a: "eat a whole lemon 🍋", b: "eat a whole raw onion 🧅" },
+    { cat: "food", a: "have a lifetime supply of your favorite snack", b: "have a lifetime supply of your favorite drink" },
+
+    // --- Animals ---
+    { cat: "animals", a: "be able to talk to any animal 🐾", b: "be able to fly like a bird 🕊️" },
+    { cat: "animals", a: "be as tall as a giraffe 🦒", b: "be as small as a mouse 🐭" },
+    { cat: "animals", a: "have a pet elephant in your backyard 🐘", b: "have a pet monkey in your house 🐒" },
+    { cat: "animals", a: "turn into a cat whenever you want 🐱", b: "turn into a dog whenever you want 🐶" },
+    { cat: "animals", a: "have wings like a bird 🦅", b: "have a tail like a monkey 🐒" },
+    { cat: "animals", a: "ride a horse to school every day 🐴", b: "ride a llama to school every day 🦙" },
+    { cat: "animals", a: "be able to purr like a cat", b: "bark like a dog every time you're happy" },
+    { cat: "animals", a: "have one pet the size of a house 🏠", b: "have 100 tiny pets" },
+    { cat: "animals", a: "live with a family of penguins 🐧", b: "live with a family of dolphins 🐬" },
+    { cat: "animals", a: "have the strength to lift 50 times your weight like an ant 🐜", b: "have the speed of a cheetah 🐆" },
+    { cat: "animals", a: "sleep upside down like a bat 🦇", b: "hibernate all winter like a bear 🐻" },
+    { cat: "animals", a: "have a shell like a turtle 🐢", b: "have quills like a porcupine 🦔" },
+    { cat: "animals", a: "be a zookeeper for a day", b: "be a vet for a day" },
+    { cat: "animals", a: "have a pet dinosaur 🦕", b: "have a pet dragon 🐉" },
+
+    // --- School & Life ---
+    { cat: "school", a: "be the smartest kid in school 🧠", b: "be the most popular kid in school 🌟" },
+    { cat: "school", a: "have easy homework every day", b: "have hard homework once a week" },
+    { cat: "school", a: "go to school on Saturdays", b: "have school all summer ☀️" },
+    { cat: "school", a: "pick what's for lunch every day 🍱", b: "pick the recess games every day" },
+    { cat: "school", a: "be really good at spelling", b: "be really good at drawing 🎨" },
+    { cat: "school", a: "have a four-day school week", b: "have a longer summer break" },
+    { cat: "school", a: "sit next to your best friend all year", b: "get to choose your own teacher" },
+    { cat: "school", a: "give a presentation in front of the whole school", b: "take a pop quiz every single day" },
+    { cat: "school", a: "never do homework again", b: "never take a test again" },
+    { cat: "school", a: "skip a grade", b: "repeat your favorite grade" },
+    { cat: "school", a: "have 2-hour recess", b: "have 2-hour lunch" },
+    { cat: "school", a: "learn a new language 🗣️", b: "learn to play an instrument 🎸" },
+    { cat: "school", a: "be class president for a day", b: "get to leave school early every Friday" },
+    { cat: "school", a: "have gym class every day 🏀", b: "have art class every day 🖌️" },
+
+    // --- Gross but funny ---
+    { cat: "gross", a: "step in a puddle of mud barefoot", b: "step in a puddle of jello barefoot" },
+    { cat: "gross", a: "smell like broccoli all day 🥦", b: "smell like garlic all day 🧄" },
+    { cat: "gross", a: "sneeze without covering your mouth in front of your class", b: "trip and fall in front of your whole class" },
+    { cat: "gross", a: "eat a spoonful of mustard", b: "eat a spoonful of hot sauce 🌶️" },
+    { cat: "gross", a: "have soggy socks all day", b: "have itchy socks all day" },
+    { cat: "gross", a: "burp super loud in a quiet room", b: "accidentally fart in a crowded elevator" },
+    { cat: "gross", a: "find a hair in your food and keep eating", b: "find a bug in your food and keep eating 🐛" },
+    { cat: "gross", a: "have bad breath for a week", b: "have stinky feet for a week" },
+    { cat: "gross", a: "wear the same socks for a week", b: "wear the same shirt for a week" },
+    { cat: "gross", a: "get slimed with green goo", b: "get covered head to toe in mud" },
+    { cat: "gross", a: "share your dessert with a sibling", b: "share your bed with a very smelly dog 🐶" },
+    { cat: "gross", a: "clean up after 100 puppies 🐾", b: "clean up after 10 elephants 🐘" },
+    { cat: "gross", a: "sit in a puddle without knowing it", b: "sit on a wet chair without knowing it" },
+    { cat: "gross", a: "have spinach stuck in your teeth all day", b: "have toilet paper stuck to your shoe all day" },
+    { cat: "gross", a: "eat a slug-shaped gummy candy", b: "eat a worm-shaped gummy candy 🪱" },
+    { cat: "gross", a: "get a wet sock thrown at you", b: "get a wedgie in front of your friends" },
   ];
 
   const categories = [
@@ -572,6 +696,9 @@
     { id: "fantasy", label: "🧙 Fantasy" },
     { id: "powers", label: "🦸 Superpowers" },
     { id: "food", label: "🍕 Food" },
+    { id: "animals", label: "🐾 Animals" },
+    { id: "school", label: "🏫 School" },
+    { id: "gross", label: "🤢 Gross" },
     { id: "everyday", label: "☀️ Everyday" },
   ];
 
@@ -670,6 +797,8 @@
   const customCategoryLabel = document.getElementById("customCategoryLabel");
   const bgColorInput = document.getElementById("bgColor");
   const textColorInput = document.getElementById("textColor");
+  const bubbleAInput = document.getElementById("bubbleAColor");
+  const bubbleBInput = document.getElementById("bubbleBColor");
   const startBtn = document.getElementById("startBtn");
   const startMsg = document.getElementById("startMsg");
   const homeBtn = document.getElementById("homeBtn");
@@ -722,6 +851,11 @@
     document.getElementById("homeTitle").style.color = text;
     document.getElementById("gameTitle").style.color = text;
     questionEl.style.color = text;
+
+    const bubbleA = bubbleAInput.value;
+    const bubbleB = bubbleBInput.value;
+    optionA.style.background = `linear-gradient(135deg, ${shade(bubbleA, 0.15)}, ${bubbleA})`;
+    optionB.style.background = `linear-gradient(135deg, ${shade(bubbleB, 0.15)}, ${bubbleB})`;
   }
 
   function slugify(str) {
@@ -996,6 +1130,8 @@
   homeBtn.addEventListener("click", goHome);
   bgColorInput.addEventListener("input", applyColors);
   textColorInput.addEventListener("input", applyColors);
+  bubbleAInput.addEventListener("input", applyColors);
+  bubbleBInput.addEventListener("input", applyColors);
   addCustomBtn.addEventListener("click", addCustomCategory);
 
   renderCategories();
