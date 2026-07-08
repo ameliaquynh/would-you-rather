@@ -250,6 +250,7 @@
     btn.classList.add("chosen");
     count++;
     countEl.textContent = count;
+    setTimeout(showQuestion, 600);
   }
 
   optionA.addEventListener("click", () => chooseOption(optionA));
