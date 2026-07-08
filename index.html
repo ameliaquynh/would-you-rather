@@ -702,6 +702,9 @@
   }
 
   function startGame() {
+    if (customCategoryInput.value.trim()) {
+      addCustomCategory();
+    }
     buildPool();
     if (pool.length === 0) {
       startMsg.classList.remove("hidden");
