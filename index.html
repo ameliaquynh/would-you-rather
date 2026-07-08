@@ -437,7 +437,7 @@
     <!-- HOME SCREEN -->
     <div id="homeScreen">
       <h1 id="homeTitle">Would You Rather? 🤔</h1>
-      <p class="subtitle">Pick a category and a look, then jump in.</p>
+      <p class="subtitle">Pick one or more categories and a look, then jump in.</p>
 
       <div class="section-label">Category</div>
       <div class="category-grid" id="categoryGrid"></div>
@@ -767,7 +767,24 @@
     localStorage.setItem("wyr_custom_q_version", CUSTOM_Q_VERSION);
   }
 
-  let selectedCategory = "all";
+  let selectedCategories = new Set(["all"]);
+
+  function toggleCategory(id) {
+    if (id === "all") {
+      selectedCategories = new Set(["all"]);
+    } else {
+      selectedCategories.delete("all");
+      if (selectedCategories.has(id)) {
+        selectedCategories.delete(id);
+      } else {
+        selectedCategories.add(id);
+      }
+      if (selectedCategories.size === 0) {
+        selectedCategories = new Set(["all"]);
+      }
+    }
+    renderCategories();
+  }
   let pool = [];
   let used = [];
   let count = 0;
@@ -885,12 +902,9 @@
     categoryGrid.innerHTML = "";
     categories.forEach((c) => {
       const btn = document.createElement("button");
-      btn.className = "category-btn" + (c.id === selectedCategory ? " selected" : "");
+      btn.className = "category-btn" + (selectedCategories.has(c.id) ? " selected" : "");
       btn.textContent = c.label;
-      btn.addEventListener("click", () => {
-        selectedCategory = c.id;
-        renderCategories();
-      });
+      btn.addEventListener("click", () => toggleCategory(c.id));
       categoryGrid.appendChild(btn);
     });
 
@@ -900,12 +914,9 @@
       const wrap = document.createElement("div");
       wrap.className = "category-btn-wrap";
       const btn = document.createElement("button");
-      btn.className = "category-btn" + (c.id === selectedCategory ? " selected" : "");
+      btn.className = "category-btn" + (selectedCategories.has(c.id) ? " selected" : "");
       btn.textContent = c.label;
-      btn.addEventListener("click", () => {
-        selectedCategory = c.id;
-        renderCategories();
-      });
+      btn.addEventListener("click", () => toggleCategory(c.id));
       const del = document.createElement("button");
       del.className = "category-del";
       del.textContent = "✕";
@@ -916,7 +927,8 @@
         customQuestions = customQuestions.filter((q) => q.cat !== c.id);
         saveCustomCategories();
         saveCustomQuestions();
-        if (selectedCategory === c.id) selectedCategory = "all";
+        selectedCategories.delete(c.id);
+        if (selectedCategories.size === 0) selectedCategories = new Set(["all"]);
         renderCategories();
       });
       wrap.appendChild(btn);
@@ -941,12 +953,12 @@
   }
 
   function buildPool() {
-    if (selectedCategory === "all") {
+    if (selectedCategories.has("all")) {
       pool = questions.concat(customQuestions);
-    } else if (customCategories.some((c) => c.id === selectedCategory)) {
-      pool = customQuestions.filter((q) => q.cat === selectedCategory);
     } else {
-      pool = questions.filter((q) => q.cat === selectedCategory);
+      pool = questions
+        .filter((q) => selectedCategories.has(q.cat))
+        .concat(customQuestions.filter((q) => selectedCategories.has(q.cat)));
     }
     used = [];
   }
@@ -970,7 +982,8 @@
       saveCustomQuestions();
     }
     customCategoryInput.value = "";
-    selectedCategory = id;
+    selectedCategories.delete("all");
+    selectedCategories.add(id);
     renderCategories();
   }
 
