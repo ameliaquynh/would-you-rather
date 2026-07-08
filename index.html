@@ -468,17 +468,34 @@
   const questionTemplates = [
     ["be a world-famous expert in {n}", "know absolutely nothing about {n}"],
     ["talk about {n} nonstop for a whole day", "never be allowed to bring up {n} again"],
-    ["dream about {n} every single night", "completely forget what {n} is"],
+    ["dream about {n} every single night", "never be allowed to think about {n} again"],
     ["get tested on {n} every morning", "never learn anything new about {n} again"],
-    ["be surrounded by {n} all the time", "never encounter {n} again in your life"],
-    ["spend all day learning about {n}", "spend all day avoiding anything related to {n}"],
+    ["be surrounded by {n} all day long", "never be around {n} again"],
+    ["spend all day learning about {n}", "spend all day avoiding anything about {n}"],
     ["be known as the funniest person when it comes to {n}", "be known as the smartest person when it comes to {n}"],
     ["get a notification about {n} every single hour", "never hear about {n} again"],
-    ["win an award for {n}", "win an award for something totally unrelated to {n}"],
-    ["have {n} be your whole personality for a year", "never be able to mention {n} to anyone again"],
+    ["win an award for {n}", "win an award for something totally different from {n}"],
+    ["have a poster of {n} in every room of your house", "never be allowed anything about {n} in your house"],
   ];
 
-  const CUSTOM_Q_VERSION = "2";
+  const massNouns = new Set([
+    "music", "art", "math", "maths", "homework", "money", "love", "happiness",
+    "courage", "patience", "honesty", "energy", "science", "history",
+    "geography", "technology", "kindness", "sadness", "anger", "fear",
+    "food", "water", "air", "weather", "news", "advice", "information",
+    "knowledge", "wisdom", "fun", "luck", "time", "space", "gym", "pe",
+  ]);
+
+  function pluralize(word) {
+    const w = word.trim();
+    const lower = w.toLowerCase();
+    if (massNouns.has(lower) || /s$/i.test(w)) return w;
+    if (/[^aeiou]y$/i.test(w)) return w.slice(0, -1) + "ies";
+    if (/(x|z|ch|sh)$/i.test(w)) return w + "es";
+    return w + "s";
+  }
+
+  const CUSTOM_Q_VERSION = "3";
   if (localStorage.getItem("wyr_custom_q_version") !== CUSTOM_Q_VERSION) {
     customQuestions = [];
     customCategories.forEach((c) => {
@@ -541,11 +558,11 @@
   }
 
   function generateQuestions(nameRaw, id) {
-    const n = nameRaw.toLowerCase();
+    const n = pluralize(nameRaw.toLowerCase());
     return questionTemplates.map(([a, b]) => ({
       cat: id,
-      a: a.replace("{n}", n),
-      b: b.replace("{n}", n),
+      a: a.split("{n}").join(n),
+      b: b.split("{n}").join(n),
     }));
   }
 
