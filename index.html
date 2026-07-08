@@ -20,6 +20,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    transition: background 0.4s ease;
   }
 
   @keyframes gradientShift {
@@ -42,6 +43,7 @@
     font-size: 2rem;
     margin: 0 0 4px;
     color: #ff5f7e;
+    transition: color 0.3s ease;
   }
 
   .subtitle {
@@ -50,6 +52,101 @@
     font-size: 0.95rem;
   }
 
+  .hidden {
+    display: none !important;
+  }
+
+  /* --- Home screen --- */
+  .section-label {
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 20px 0 10px;
+  }
+
+  .category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .category-btn {
+    flex: 1 1 auto;
+    border: 2px solid #eee;
+    background: #f7f7ff;
+    color: #555;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .category-btn:active {
+    transform: translateY(2px);
+  }
+
+  .category-btn.selected {
+    border-color: #ff5f7e;
+    background: #fff0f3;
+    color: #ff5f7e;
+  }
+
+  .color-grid {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 8px;
+  }
+
+  .color-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .color-field label {
+    font-size: 0.8rem;
+    color: #777;
+  }
+
+  .color-field input[type="color"] {
+    width: 60px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+  }
+
+  .start-btn {
+    margin-top: 26px;
+    background: linear-gradient(135deg, #ff6a88, #ff5f7e);
+    border: none;
+    border-radius: 20px;
+    padding: 16px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+
+  .start-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  /* --- Game screen --- */
   .counter {
     display: inline-block;
     background: #fff0f3;
@@ -82,6 +179,7 @@
     font-weight: bold;
     color: #333;
     line-height: 1.4;
+    transition: color 0.3s ease;
   }
 
   .choices {
@@ -120,7 +218,13 @@
     outline: 4px solid #ffd93d;
   }
 
+  .game-actions {
+    display: flex;
+    gap: 12px;
+  }
+
   .next-btn {
+    flex: 1;
     background: linear-gradient(135deg, #a18cd1, #fbc2eb);
     border: none;
     border-radius: 20px;
@@ -133,7 +237,21 @@
     transition: transform 0.12s ease, box-shadow 0.12s ease;
   }
 
-  .next-btn:active {
+  .home-btn {
+    background: #eee;
+    color: #777;
+    border: none;
+    border-radius: 20px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.08);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+
+  .next-btn:active,
+  .home-btn:active {
     transform: translateY(4px);
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
   }
@@ -148,71 +266,123 @@
 <body>
 
   <div class="card">
-    <h1>Would You Rather? 🤔</h1>
-    <p class="subtitle">Pick a side. There's no wrong answer... except maybe eating a bug.</p>
-    <div class="counter">Questions answered: <span id="count">0</span></div>
 
-    <div class="question-box" id="questionBox">
-      <div id="question">Loading...</div>
+    <!-- HOME SCREEN -->
+    <div id="homeScreen">
+      <h1 id="homeTitle">Would You Rather? 🤔</h1>
+      <p class="subtitle">Pick a category and a look, then jump in.</p>
+
+      <div class="section-label">Category</div>
+      <div class="category-grid" id="categoryGrid"></div>
+
+      <div class="section-label">Colors</div>
+      <div class="color-grid">
+        <div class="color-field">
+          <input type="color" id="bgColor" value="#ff8fa3" />
+          <label for="bgColor">Background</label>
+        </div>
+        <div class="color-field">
+          <input type="color" id="textColor" value="#ff5f7e" />
+          <label for="textColor">Words</label>
+        </div>
+      </div>
+
+      <button class="start-btn" id="startBtn">Let's Play 🎮</button>
+
+      <footer>Made by Millie 💜</footer>
     </div>
 
-    <div class="choices">
-      <button class="choice-btn" id="optionA"></button>
-      <button class="choice-btn" id="optionB"></button>
+    <!-- GAME SCREEN -->
+    <div id="gameScreen" class="hidden">
+      <h1 id="gameTitle">Would You Rather? 🤔</h1>
+      <p class="subtitle">Pick a side. There's no wrong answer... except maybe eating a bug.</p>
+      <div class="counter">Questions answered: <span id="count">0</span></div>
+
+      <div class="question-box" id="questionBox">
+        <div id="question">Loading...</div>
+      </div>
+
+      <div class="choices">
+        <button class="choice-btn" id="optionA"></button>
+        <button class="choice-btn" id="optionB"></button>
+      </div>
+
+      <div class="game-actions">
+        <button class="home-btn" id="homeBtn">🏠 Home</button>
+        <button class="next-btn" id="nextBtn">🔀 New Question</button>
+      </div>
+
+      <footer>Made by Millie 💜</footer>
     </div>
 
-    <button class="next-btn" id="nextBtn">🔀 New Question</button>
-
-    <footer>Made by Millie 💜</footer>
   </div>
 
 <script>
   const questions = [
-    ["eat a bug 🐛", "wear socks with sandals forever 🧦"],
-    ["have a pet dragon 🐉", "have a pet unicorn 🦄"],
-    ["always be 10 minutes late", "always be 20 minutes early"],
-    ["talk in rhymes forever", "sing everything you say"],
-    ["have hair made of spaghetti 🍝", "have skin made of bubble wrap"],
-    ["be the funniest person you know", "be the smartest person you know"],
-    ["never eat pizza again 🍕", "never eat ice cream again 🍦"],
-    ["fly like a bird 🕊️", "breathe underwater like a fish 🐠"],
-    ["be super strong 💪", "be super fast 🏃"],
-    ["live in a treehouse 🌳", "live in an underwater house 🏠"],
-    ["have a snowball fight every day", "have a water balloon fight every day"],
-    ["never use a phone again 📵", "never watch TV again 📺"],
-    ["be able to talk to animals 🐾", "be able to talk to plants 🌱"],
-    ["always have messy hair", "always have food stuck in your teeth"],
-    ["be a famous singer 🎤", "be a famous athlete ⚽"],
-    ["have to hop everywhere like a bunny 🐰", "have to crawl everywhere like a crab 🦀"],
-    ["only eat sweet food forever 🍬", "only eat salty food forever 🥨"],
-    ["have a rewind button for your life ⏪", "have a pause button for your life ⏸️"],
-    ["explore outer space 🚀", "explore the deep ocean 🌊"],
-    ["be invisible for a day", "be able to fly for a day"],
-    ["never get a cold again 🤧", "never get a paper cut again 📄"],
-    ["have your own theme song play everywhere you go 🎵", "have confetti fall every time you enter a room 🎉"],
-    ["live without music", "live without movies"],
-    ["always have to whisper", "always have to shout"],
-    ["have a robot best friend 🤖", "have a talking pet best friend 🐶"],
-    ["ride a giant hamster wheel to school", "ride a giant skateboard to school"],
-    ["be able to teleport anywhere 🌀", "be able to freeze time ⏱️"],
-    ["have glow-in-the-dark skin", "have rainbow-colored hair 🌈"],
-    ["only text in emojis 😂", "only text in ALL CAPS"],
-    ["have super hearing 👂", "have super eyesight 👀"],
-    ["be really good at math", "be really good at art"],
-    ["live in a candy house 🍭", "live in a treehouse fort"],
-    ["never lose Wi-Fi", "never lose your phone charger"],
-    ["always win at board games", "always win at video games"],
-    ["have a pet that's the size of an elephant but is a hamster 🐹", "have a pet that's the size of a mouse but is a lion 🦁"],
-    ["be able to breathe fire like a dragon 🔥", "be able to shoot ice like a snow queen ❄️"],
-    ["have permanent clown shoes", "have a permanent clown nose"],
-    ["never eat vegetables again", "never eat dessert again"],
-    ["control the weather ⛈️", "control people's dreams 💭"],
-    ["be a superhero with no cape", "be a supervillain who's actually nice"],
+    { cat: "silly", a: "eat a bug 🐛", b: "wear socks with sandals forever 🧦" },
+    { cat: "fantasy", a: "have a pet dragon 🐉", b: "have a pet unicorn 🦄" },
+    { cat: "everyday", a: "always be 10 minutes late", b: "always be 20 minutes early" },
+    { cat: "silly", a: "talk in rhymes forever", b: "sing everything you say" },
+    { cat: "silly", a: "have hair made of spaghetti 🍝", b: "have skin made of bubble wrap" },
+    { cat: "everyday", a: "be the funniest person you know", b: "be the smartest person you know" },
+    { cat: "food", a: "never eat pizza again 🍕", b: "never eat ice cream again 🍦" },
+    { cat: "fantasy", a: "fly like a bird 🕊️", b: "breathe underwater like a fish 🐠" },
+    { cat: "powers", a: "be super strong 💪", b: "be super fast 🏃" },
+    { cat: "everyday", a: "live in a treehouse 🌳", b: "live in an underwater house 🏠" },
+    { cat: "silly", a: "have a snowball fight every day", b: "have a water balloon fight every day" },
+    { cat: "everyday", a: "never use a phone again 📵", b: "never watch TV again 📺" },
+    { cat: "fantasy", a: "be able to talk to animals 🐾", b: "be able to talk to plants 🌱" },
+    { cat: "silly", a: "always have messy hair", b: "always have food stuck in your teeth" },
+    { cat: "everyday", a: "be a famous singer 🎤", b: "be a famous athlete ⚽" },
+    { cat: "silly", a: "have to hop everywhere like a bunny 🐰", b: "have to crawl everywhere like a crab 🦀" },
+    { cat: "food", a: "only eat sweet food forever 🍬", b: "only eat salty food forever 🥨" },
+    { cat: "fantasy", a: "have a rewind button for your life ⏪", b: "have a pause button for your life ⏸️" },
+    { cat: "fantasy", a: "explore outer space 🚀", b: "explore the deep ocean 🌊" },
+    { cat: "powers", a: "be invisible for a day", b: "be able to fly for a day" },
+    { cat: "everyday", a: "never get a cold again 🤧", b: "never get a paper cut again 📄" },
+    { cat: "silly", a: "have your own theme song play everywhere you go 🎵", b: "have confetti fall every time you enter a room 🎉" },
+    { cat: "everyday", a: "live without music", b: "live without movies" },
+    { cat: "silly", a: "always have to whisper", b: "always have to shout" },
+    { cat: "fantasy", a: "have a robot best friend 🤖", b: "have a talking pet best friend 🐶" },
+    { cat: "silly", a: "ride a giant hamster wheel to school", b: "ride a giant skateboard to school" },
+    { cat: "powers", a: "be able to teleport anywhere 🌀", b: "be able to freeze time ⏱️" },
+    { cat: "silly", a: "have glow-in-the-dark skin", b: "have rainbow-colored hair 🌈" },
+    { cat: "everyday", a: "only text in emojis 😂", b: "only text in ALL CAPS" },
+    { cat: "powers", a: "have super hearing 👂", b: "have super eyesight 👀" },
+    { cat: "everyday", a: "be really good at math", b: "be really good at art" },
+    { cat: "fantasy", a: "live in a candy house 🍭", b: "live in a treehouse fort" },
+    { cat: "everyday", a: "never lose Wi-Fi", b: "never lose your phone charger" },
+    { cat: "everyday", a: "always win at board games", b: "always win at video games" },
+    { cat: "fantasy", a: "have a pet that's the size of an elephant but is a hamster 🐹", b: "have a pet that's the size of a mouse but is a lion 🦁" },
+    { cat: "powers", a: "be able to breathe fire like a dragon 🔥", b: "be able to shoot ice like a snow queen ❄️" },
+    { cat: "silly", a: "have permanent clown shoes", b: "have a permanent clown nose" },
+    { cat: "food", a: "never eat vegetables again", b: "never eat dessert again" },
+    { cat: "fantasy", a: "control the weather ⛈️", b: "control people's dreams 💭" },
+    { cat: "fantasy", a: "be a superhero with no cape", b: "be a supervillain who's actually nice" },
   ];
 
+  const categories = [
+    { id: "all", label: "🎲 All" },
+    { id: "silly", label: "🤪 Silly" },
+    { id: "fantasy", label: "🧙 Fantasy" },
+    { id: "powers", label: "🦸 Superpowers" },
+    { id: "food", label: "🍕 Food" },
+    { id: "everyday", label: "☀️ Everyday" },
+  ];
+
+  let selectedCategory = "all";
+  let pool = [];
   let used = [];
   let count = 0;
   let chosen = false;
+
+  const homeScreen = document.getElementById("homeScreen");
+  const gameScreen = document.getElementById("gameScreen");
+  const categoryGrid = document.getElementById("categoryGrid");
+  const bgColorInput = document.getElementById("bgColor");
+  const textColorInput = document.getElementById("textColor");
+  const startBtn = document.getElementById("startBtn");
+  const homeBtn = document.getElementById("homeBtn");
 
   const questionEl = document.getElementById("question");
   const questionBox = document.getElementById("questionBox");
@@ -221,24 +391,68 @@
   const nextBtn = document.getElementById("nextBtn");
   const countEl = document.getElementById("count");
 
+  function shade(hex, percent) {
+    const num = parseInt(hex.slice(1), 16);
+    let r = (num >> 16) + Math.round(255 * percent);
+    let g = ((num >> 8) & 0xff) + Math.round(255 * percent);
+    let b = (num & 0xff) + Math.round(255 * percent);
+    r = Math.max(0, Math.min(255, r));
+    g = Math.max(0, Math.min(255, g));
+    b = Math.max(0, Math.min(255, b));
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  }
+
+  function applyColors() {
+    const bg = bgColorInput.value;
+    const text = textColorInput.value;
+    const light = shade(bg, 0.35);
+    const lighter = shade(bg, 0.55);
+    document.body.style.background = `linear-gradient(135deg, ${bg} 0%, ${light} 50%, ${lighter} 100%)`;
+    document.body.style.backgroundSize = "300% 300%";
+    document.getElementById("homeTitle").style.color = text;
+    document.getElementById("gameTitle").style.color = text;
+    questionEl.style.color = text;
+  }
+
+  function renderCategories() {
+    categoryGrid.innerHTML = "";
+    categories.forEach((c) => {
+      const btn = document.createElement("button");
+      btn.className = "category-btn" + (c.id === selectedCategory ? " selected" : "");
+      btn.textContent = c.label;
+      btn.addEventListener("click", () => {
+        selectedCategory = c.id;
+        renderCategories();
+      });
+      categoryGrid.appendChild(btn);
+    });
+  }
+
+  function buildPool() {
+    pool = selectedCategory === "all"
+      ? questions
+      : questions.filter((q) => q.cat === selectedCategory);
+    used = [];
+  }
+
   function pickQuestion() {
-    if (used.length === questions.length) used = [];
+    if (used.length === pool.length) used = [];
     let index;
     do {
-      index = Math.floor(Math.random() * questions.length);
+      index = Math.floor(Math.random() * pool.length);
     } while (used.includes(index));
     used.push(index);
-    return questions[index];
+    return pool[index];
   }
 
   function showQuestion() {
     chosen = false;
     optionA.classList.remove("chosen");
     optionB.classList.remove("chosen");
-    const [a, b] = pickQuestion();
+    const q = pickQuestion();
     questionEl.textContent = "Would you rather...";
-    optionA.textContent = a;
-    optionB.textContent = b;
+    optionA.textContent = q.a;
+    optionB.textContent = q.b;
 
     questionBox.classList.add("pop");
     setTimeout(() => questionBox.classList.remove("pop"), 150);
@@ -253,11 +467,31 @@
     setTimeout(showQuestion, 600);
   }
 
+  function startGame() {
+    applyColors();
+    buildPool();
+    count = 0;
+    countEl.textContent = count;
+    homeScreen.classList.add("hidden");
+    gameScreen.classList.remove("hidden");
+    showQuestion();
+  }
+
+  function goHome() {
+    gameScreen.classList.add("hidden");
+    homeScreen.classList.remove("hidden");
+  }
+
   optionA.addEventListener("click", () => chooseOption(optionA));
   optionB.addEventListener("click", () => chooseOption(optionB));
   nextBtn.addEventListener("click", showQuestion);
+  startBtn.addEventListener("click", startGame);
+  homeBtn.addEventListener("click", goHome);
+  bgColorInput.addEventListener("input", applyColors);
+  textColorInput.addEventListener("input", applyColors);
 
-  showQuestion();
+  renderCategories();
+  applyColors();
 </script>
 
 </body>
