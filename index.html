@@ -476,6 +476,16 @@
     ["get a notification about {n} every single hour", "never hear about {n} again"],
     ["win an award for {n}", "win an award for something totally different from {n}"],
     ["have a poster of {n} in every room of your house", "never be allowed anything about {n} in your house"],
+    ["be the best in the world at {n}", "be the worst in the world at {n}"],
+    ["get a surprise party themed around {n}", "get a surprise party with zero {n} allowed"],
+    ["have a whole class at school just about {n}", "never be allowed to study {n} in school"],
+    ["be on a TV show about {n}", "never be allowed to watch a show about {n}"],
+    ["get a trophy shaped like {n}", "get a trophy for literally anything except {n}"],
+    ["be really lucky when it comes to {n}", "be really unlucky when it comes to {n}"],
+    ["have your birthday party themed around {n}", "have zero {n} at your birthday party"],
+    ["be famous because of {n}", "be famous for something totally opposite of {n}"],
+    ["get extra recess for talking about {n}", "get detention for mentioning {n}"],
+    ["have {n} follow you wherever you go", "never see {n} again as long as you live"],
   ];
 
   const massNouns = new Set([
@@ -495,7 +505,7 @@
     return w + "s";
   }
 
-  const CUSTOM_Q_VERSION = "3";
+  const CUSTOM_Q_VERSION = "4";
   if (localStorage.getItem("wyr_custom_q_version") !== CUSTOM_Q_VERSION) {
     customQuestions = [];
     customCategories.forEach((c) => {
@@ -557,9 +567,19 @@
     return str.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   }
 
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
   function generateQuestions(nameRaw, id) {
     const n = pluralize(nameRaw.toLowerCase());
-    return questionTemplates.map(([a, b]) => ({
+    const picked = shuffle(questionTemplates).slice(0, 10);
+    return picked.map(([a, b]) => ({
       cat: id,
       a: a.split("{n}").join(n),
       b: b.split("{n}").join(n),
