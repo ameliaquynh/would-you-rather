@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Would You Rather?</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 25%, #a1c4fd 60%, #c2e9fb 100%);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    padding: 40px 32px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 4px;
+    color: #ff5f7e;
+  }
+
+  .subtitle {
+    color: #777;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+  }
+
+  .counter {
+    display: inline-block;
+    background: #fff0f3;
+    color: #ff5f7e;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+
+  .question-box {
+    background: #f7f7ff;
+    border-radius: 20px;
+    padding: 28px 20px;
+    margin-bottom: 24px;
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease;
+  }
+
+  .question-box.pop {
+    transform: scale(1.03);
+  }
+
+  #question {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  .choices {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .choice-btn {
+    flex: 1;
+    border: none;
+    border-radius: 18px;
+    padding: 18px 12px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .choice-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  #optionA {
+    background: linear-gradient(135deg, #ff6a88, #ff5f7e);
+  }
+
+  #optionB {
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+  }
+
+  .choice-btn.chosen {
+    outline: 4px solid #ffd93d;
+  }
+
+  .next-btn {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    border: none;
+    border-radius: 20px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+
+  .next-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  footer {
+    margin-top: 24px;
+    font-size: 0.75rem;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Would You Rather? 🤔</h1>
+    <p class="subtitle">Pick a side. There's no wrong answer... except maybe eating a bug.</p>
+    <div class="counter">Questions answered: <span id="count">0</span></div>
+
+    <div class="question-box" id="questionBox">
+      <div id="question">Loading...</div>
+    </div>
+
+    <div class="choices">
+      <button class="choice-btn" id="optionA"></button>
+      <button class="choice-btn" id="optionB"></button>
+    </div>
+
+    <button class="next-btn" id="nextBtn">🔀 New Question</button>
+
+    <footer>Made by Millie 💜</footer>
+  </div>
+
+<script>
+  const questions = [
+    ["eat a bug 🐛", "wear socks with sandals forever 🧦"],
+    ["have a pet dragon 🐉", "have a pet unicorn 🦄"],
+    ["always be 10 minutes late", "always be 20 minutes early"],
+    ["talk in rhymes forever", "sing everything you say"],
+    ["have hair made of spaghetti 🍝", "have skin made of bubble wrap"],
+    ["be the funniest person you know", "be the smartest person you know"],
+    ["never eat pizza again 🍕", "never eat ice cream again 🍦"],
+    ["fly like a bird 🕊️", "breathe underwater like a fish 🐠"],
+    ["be super strong 💪", "be super fast 🏃"],
+    ["live in a treehouse 🌳", "live in an underwater house 🏠"],
+    ["have a snowball fight every day", "have a water balloon fight every day"],
+    ["never use a phone again 📵", "never watch TV again 📺"],
+    ["be able to talk to animals 🐾", "be able to talk to plants 🌱"],
+    ["always have messy hair", "always have food stuck in your teeth"],
+    ["be a famous singer 🎤", "be a famous athlete ⚽"],
+    ["have to hop everywhere like a bunny 🐰", "have to crawl everywhere like a crab 🦀"],
+    ["only eat sweet food forever 🍬", "only eat salty food forever 🥨"],
+    ["have a rewind button for your life ⏪", "have a pause button for your life ⏸️"],
+    ["explore outer space 🚀", "explore the deep ocean 🌊"],
+    ["be invisible for a day", "be able to fly for a day"],
+    ["never get a cold again 🤧", "never get a paper cut again 📄"],
+    ["have your own theme song play everywhere you go 🎵", "have confetti fall every time you enter a room 🎉"],
+    ["live without music", "live without movies"],
+    ["always have to whisper", "always have to shout"],
+    ["have a robot best friend 🤖", "have a talking pet best friend 🐶"],
+    ["ride a giant hamster wheel to school", "ride a giant skateboard to school"],
+    ["be able to teleport anywhere 🌀", "be able to freeze time ⏱️"],
+    ["have glow-in-the-dark skin", "have rainbow-colored hair 🌈"],
+    ["only text in emojis 😂", "only text in ALL CAPS"],
+    ["have super hearing 👂", "have super eyesight 👀"],
+    ["be really good at math", "be really good at art"],
+    ["live in a candy house 🍭", "live in a treehouse fort"],
+    ["never lose Wi-Fi", "never lose your phone charger"],
+    ["always win at board games", "always win at video games"],
+    ["have a pet that's the size of an elephant but is a hamster 🐹", "have a pet that's the size of a mouse but is a lion 🦁"],
+    ["be able to breathe fire like a dragon 🔥", "be able to shoot ice like a snow queen ❄️"],
+    ["have permanent clown shoes", "have a permanent clown nose"],
+    ["never eat vegetables again", "never eat dessert again"],
+    ["control the weather ⛈️", "control people's dreams 💭"],
+    ["be a superhero with no cape", "be a supervillain who's actually nice"],
+  ];
+
+  let used = [];
+  let count = 0;
+  let chosen = false;
+
+  const questionEl = document.getElementById("question");
+  const questionBox = document.getElementById("questionBox");
+  const optionA = document.getElementById("optionA");
+  const optionB = document.getElementById("optionB");
+  const nextBtn = document.getElementById("nextBtn");
+  const countEl = document.getElementById("count");
+
+  function pickQuestion() {
+    if (used.length === questions.length) used = [];
+    let index;
+    do {
+      index = Math.floor(Math.random() * questions.length);
+    } while (used.includes(index));
+    used.push(index);
+    return questions[index];
+  }
+
+  function showQuestion() {
+    chosen = false;
+    optionA.classList.remove("chosen");
+    optionB.classList.remove("chosen");
+    const [a, b] = pickQuestion();
+    questionEl.textContent = "Would you rather...";
+    optionA.textContent = a;
+    optionB.textContent = b;
+
+    questionBox.classList.add("pop");
+    setTimeout(() => questionBox.classList.remove("pop"), 150);
+  }
+
+  function chooseOption(btn) {
+    if (chosen) return;
+    chosen = true;
+    btn.classList.add("chosen");
+    count++;
+    countEl.textContent = count;
+  }
+
+  optionA.addEventListener("click", () => chooseOption(optionA));
+  optionB.addEventListener("click", () => chooseOption(optionB));
+  nextBtn.addEventListener("click", showQuestion);
+
+  showQuestion();
+</script>
+
+</body>
+</html>
