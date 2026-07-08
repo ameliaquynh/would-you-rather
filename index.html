@@ -97,6 +97,35 @@
     color: #ff5f7e;
   }
 
+  .category-btn-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+  }
+
+  .category-btn-wrap .category-btn {
+    width: 100%;
+  }
+
+  .category-del {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff5f7e;
+    color: white;
+    border: none;
+    font-size: 0.65rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  }
+
   .color-grid {
     display: flex;
     gap: 20px;
@@ -211,6 +240,15 @@
 
   .custom-item span {
     flex: 1;
+  }
+
+  .custom-tag {
+    background: #eee;
+    border-radius: 8px;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    color: #777;
+    white-space: nowrap;
   }
 
   .custom-item button {
@@ -372,6 +410,7 @@
 
       <div class="section-label">Add Your Own</div>
       <div class="custom-form">
+        <input type="text" id="customCategory" placeholder="Category (optional, e.g. Movies)" maxlength="24" />
         <input type="text" id="customA" placeholder="Option A..." maxlength="80" />
         <input type="text" id="customB" placeholder="Option B..." maxlength="80" />
         <button class="add-btn" id="addCustomBtn">➕ Add</button>
@@ -470,6 +509,13 @@
     customQuestions = [];
   }
 
+  let customCategories = [];
+  try {
+    customCategories = JSON.parse(localStorage.getItem("wyr_custom_categories") || "[]");
+  } catch (e) {
+    customCategories = [];
+  }
+
   let selectedCategory = "all";
   let pool = [];
   let used = [];
@@ -484,6 +530,7 @@
   const startBtn = document.getElementById("startBtn");
   const startMsg = document.getElementById("startMsg");
   const homeBtn = document.getElementById("homeBtn");
+  const customCategoryInput = document.getElementById("customCategory");
   const customAInput = document.getElementById("customA");
   const customBInput = document.getElementById("customB");
   const addCustomBtn = document.getElementById("addCustomBtn");
@@ -519,6 +566,17 @@
     questionEl.style.color = text;
   }
 
+  function slugify(str) {
+    return str.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  }
+
+  function categoryLabelFor(id) {
+    const fixed = categories.find((c) => c.id === id);
+    if (fixed) return fixed.label;
+    const custom = customCategories.find((c) => c.id === id);
+    return custom ? custom.label : id;
+  }
+
   function renderCategories() {
     categoryGrid.innerHTML = "";
     categories.forEach((c) => {
@@ -531,13 +589,41 @@
       });
       categoryGrid.appendChild(btn);
     });
+    customCategories.forEach((c) => {
+      const wrap = document.createElement("div");
+      wrap.className = "category-btn-wrap";
+      const btn = document.createElement("button");
+      btn.className = "category-btn" + (c.id === selectedCategory ? " selected" : "");
+      btn.textContent = c.label;
+      btn.addEventListener("click", () => {
+        selectedCategory = c.id;
+        renderCategories();
+      });
+      const del = document.createElement("button");
+      del.className = "category-del";
+      del.textContent = "✕";
+      del.title = "Delete category";
+      del.addEventListener("click", (e) => {
+        e.stopPropagation();
+        customCategories = customCategories.filter((x) => x.id !== c.id);
+        customQuestions = customQuestions.filter((q) => q.cat !== c.id);
+        saveCustomCategories();
+        saveCustom();
+        if (selectedCategory === c.id) selectedCategory = "all";
+        renderCategories();
+        renderCustomList();
+      });
+      wrap.appendChild(btn);
+      wrap.appendChild(del);
+      categoryGrid.appendChild(wrap);
+    });
   }
 
   function buildPool() {
     if (selectedCategory === "all") {
       pool = questions.concat(customQuestions);
-    } else if (selectedCategory === "custom") {
-      pool = customQuestions;
+    } else if (selectedCategory === "custom" || customCategories.some((c) => c.id === selectedCategory)) {
+      pool = customQuestions.filter((q) => q.cat === selectedCategory);
     } else {
       pool = questions.filter((q) => q.cat === selectedCategory);
     }
@@ -546,6 +632,10 @@
 
   function saveCustom() {
     localStorage.setItem("wyr_custom", JSON.stringify(customQuestions));
+  }
+
+  function saveCustomCategories() {
+    localStorage.setItem("wyr_custom_categories", JSON.stringify(customCategories));
   }
 
   function renderCustomList() {
@@ -560,6 +650,9 @@
     customQuestions.forEach((q, i) => {
       const row = document.createElement("div");
       row.className = "custom-item";
+      const tag = document.createElement("span");
+      tag.className = "custom-tag";
+      tag.textContent = categoryLabelFor(q.cat);
       const text = document.createElement("span");
       text.textContent = q.a + "  vs.  " + q.b;
       const del = document.createElement("button");
@@ -569,6 +662,7 @@
         saveCustom();
         renderCustomList();
       });
+      row.appendChild(tag);
       row.appendChild(text);
       row.appendChild(del);
       customList.appendChild(row);
@@ -579,11 +673,23 @@
     const a = customAInput.value.trim();
     const b = customBInput.value.trim();
     if (!a || !b) return;
-    customQuestions.push({ cat: "custom", a, b });
+    const catNameRaw = customCategoryInput.value.trim();
+    let cat = "custom";
+    if (catNameRaw) {
+      const id = slugify(catNameRaw) || "custom";
+      cat = id;
+      if (id !== "custom" && !customCategories.some((c) => c.id === id)) {
+        customCategories.push({ id, label: "📁 " + catNameRaw });
+        saveCustomCategories();
+      }
+    }
+    customQuestions.push({ cat, a, b });
     saveCustom();
+    customCategoryInput.value = "";
     customAInput.value = "";
     customBInput.value = "";
     renderCustomList();
+    renderCategories();
   }
 
   function pickQuestion() {
