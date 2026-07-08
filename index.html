@@ -349,6 +349,9 @@
       <div class="section-label">Category</div>
       <div class="category-grid" id="categoryGrid"></div>
 
+      <div class="section-label hidden" id="customCategoryLabel">Your Categories</div>
+      <div class="category-grid" id="customCategoryGrid"></div>
+
       <div class="section-label">Colors</div>
       <div class="color-grid">
         <div class="color-field">
@@ -525,6 +528,8 @@
   const homeScreen = document.getElementById("homeScreen");
   const gameScreen = document.getElementById("gameScreen");
   const categoryGrid = document.getElementById("categoryGrid");
+  const customCategoryGrid = document.getElementById("customCategoryGrid");
+  const customCategoryLabel = document.getElementById("customCategoryLabel");
   const bgColorInput = document.getElementById("bgColor");
   const textColorInput = document.getElementById("textColor");
   const startBtn = document.getElementById("startBtn");
@@ -598,6 +603,9 @@
       });
       categoryGrid.appendChild(btn);
     });
+
+    customCategoryGrid.innerHTML = "";
+    customCategoryLabel.classList.toggle("hidden", customCategories.length === 0);
     customCategories.forEach((c) => {
       const wrap = document.createElement("div");
       wrap.className = "category-btn-wrap";
@@ -623,7 +631,7 @@
       });
       wrap.appendChild(btn);
       wrap.appendChild(del);
-      categoryGrid.appendChild(wrap);
+      customCategoryGrid.appendChild(wrap);
     });
   }
 
