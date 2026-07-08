@@ -499,7 +499,6 @@
     { id: "powers", label: "🦸 Superpowers" },
     { id: "food", label: "🍕 Food" },
     { id: "everyday", label: "☀️ Everyday" },
-    { id: "custom", label: "✏️ My Own" },
   ];
 
   let customQuestions = [];
@@ -622,7 +621,7 @@
   function buildPool() {
     if (selectedCategory === "all") {
       pool = questions.concat(customQuestions);
-    } else if (selectedCategory === "custom" || customCategories.some((c) => c.id === selectedCategory)) {
+    } else if (customCategories.some((c) => c.id === selectedCategory)) {
       pool = customQuestions.filter((q) => q.cat === selectedCategory);
     } else {
       pool = questions.filter((q) => q.cat === selectedCategory);
@@ -674,14 +673,12 @@
     const b = customBInput.value.trim();
     if (!a || !b) return;
     const catNameRaw = customCategoryInput.value.trim();
-    let cat = "custom";
-    if (catNameRaw) {
-      const id = slugify(catNameRaw) || "custom";
-      cat = id;
-      if (id !== "custom" && !customCategories.some((c) => c.id === id)) {
-        customCategories.push({ id, label: "📁 " + catNameRaw });
-        saveCustomCategories();
-      }
+    const id = catNameRaw ? (slugify(catNameRaw) || "custom") : "custom";
+    const label = catNameRaw ? "📁 " + catNameRaw : "✏️ My Own";
+    const cat = id;
+    if (!customCategories.some((c) => c.id === id)) {
+      customCategories.push({ id, label });
+      saveCustomCategories();
     }
     customQuestions.push({ cat, a, b });
     saveCustom();
