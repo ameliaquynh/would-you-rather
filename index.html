@@ -466,17 +466,28 @@
   }
 
   const questionTemplates = [
-    ["be the world champion at {n}", "never be allowed to try {n} again"],
-    ["only talk about {n} for a whole day", "never be able to mention {n} again"],
-    ["have unlimited amounts of {n}", "never get to experience {n} again"],
-    ["dream about {n} every single night", "forget that {n} exists"],
-    ["become famous because of {n}", "become famous for the total opposite of {n}"],
-    ["spend all your allowance on {n}", "never spend a dime on {n}"],
-    ["get quizzed on {n} every morning", "never learn anything new about {n} again"],
-    ["have your whole room themed around {n}", "never be allowed any {n} stuff in your house"],
-    ["be the funniest person when it comes to {n}", "be the smartest person when it comes to {n}"],
-    ["do nothing but {n} for 24 hours straight", "not be able to do {n} for an entire year"],
+    ["be a world-famous expert in {n}", "know absolutely nothing about {n}"],
+    ["talk about {n} nonstop for a whole day", "never be allowed to bring up {n} again"],
+    ["dream about {n} every single night", "completely forget what {n} is"],
+    ["get tested on {n} every morning", "never learn anything new about {n} again"],
+    ["be surrounded by {n} all the time", "never encounter {n} again in your life"],
+    ["spend all day learning about {n}", "spend all day avoiding anything related to {n}"],
+    ["be known as the funniest person when it comes to {n}", "be known as the smartest person when it comes to {n}"],
+    ["get a notification about {n} every single hour", "never hear about {n} again"],
+    ["win an award for {n}", "win an award for something totally unrelated to {n}"],
+    ["have {n} be your whole personality for a year", "never be able to mention {n} to anyone again"],
   ];
+
+  const CUSTOM_Q_VERSION = "2";
+  if (localStorage.getItem("wyr_custom_q_version") !== CUSTOM_Q_VERSION) {
+    customQuestions = [];
+    customCategories.forEach((c) => {
+      const nameRaw = c.label.replace(/^\S+\s*/, "");
+      customQuestions = customQuestions.concat(generateQuestions(nameRaw, c.id));
+    });
+    saveCustomQuestions();
+    localStorage.setItem("wyr_custom_q_version", CUSTOM_Q_VERSION);
+  }
 
   let selectedCategory = "all";
   let pool = [];
