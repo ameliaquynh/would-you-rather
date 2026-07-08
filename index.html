@@ -378,6 +378,20 @@
     margin-bottom: 20px;
   }
 
+  .end-emoji {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .end-text {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
   .reveal-result {
     font-size: 1.1rem;
     font-weight: bold;
@@ -452,6 +466,9 @@
         <input type="text" id="p2NameInput" placeholder="Player 2 name" maxlength="16" />
       </div>
 
+      <div class="section-label">How Many Questions?</div>
+      <div class="category-grid" id="limitGrid"></div>
+
       <div class="section-label">Colors</div>
       <div class="color-grid">
         <div class="color-field">
@@ -522,7 +539,16 @@
         <button class="start-btn" id="nextRoundBtn">Next Round 🔀</button>
       </div>
 
-      <div class="game-actions">
+      <div id="endView" class="hidden">
+        <div class="end-emoji">🎉</div>
+        <div class="end-text" id="endText"></div>
+        <div class="game-actions">
+          <button class="home-btn" id="endHomeBtn">🏠 Home</button>
+          <button class="next-btn" id="playAgainBtn">🔁 Play Again</button>
+        </div>
+      </div>
+
+      <div class="game-actions" id="gameActionsBar">
         <button class="home-btn" id="homeBtn">🏠 Home</button>
         <button class="next-btn" id="nextBtn">🔀 New Question</button>
       </div>
@@ -805,7 +831,18 @@
     currentQuestion: null,
     agreements: 0,
     rounds: 0,
+    finished: false,
   };
+
+  const limits = [
+    { id: "5", value: 5, label: "5" },
+    { id: "10", value: 10, label: "10" },
+    { id: "15", value: 15, label: "15" },
+    { id: "20", value: 20, label: "20" },
+    { id: "unlimited", value: null, label: "∞ No Limit" },
+  ];
+
+  let questionLimit = null;
 
   const homeScreen = document.getElementById("homeScreen");
   const gameScreen = document.getElementById("gameScreen");
@@ -846,6 +883,12 @@
   const revealP1 = document.getElementById("revealP1");
   const revealP2 = document.getElementById("revealP2");
   const nextRoundBtn = document.getElementById("nextRoundBtn");
+  const limitGrid = document.getElementById("limitGrid");
+  const endView = document.getElementById("endView");
+  const endText = document.getElementById("endText");
+  const endHomeBtn = document.getElementById("endHomeBtn");
+  const playAgainBtn = document.getElementById("playAgainBtn");
+  const gameActionsBar = document.getElementById("gameActionsBar");
 
   function shade(hex, percent) {
     const num = parseInt(hex.slice(1), 16);
@@ -952,6 +995,20 @@
     });
   }
 
+  function renderLimits() {
+    limitGrid.innerHTML = "";
+    limits.forEach((l) => {
+      const btn = document.createElement("button");
+      btn.className = "category-btn" + (l.value === questionLimit ? " selected" : "");
+      btn.textContent = l.label;
+      btn.addEventListener("click", () => {
+        questionLimit = l.value;
+        renderLimits();
+      });
+      limitGrid.appendChild(btn);
+    });
+  }
+
   function buildPool() {
     if (selectedCategories.has("all")) {
       pool = questions.concat(customQuestions);
@@ -1016,7 +1073,24 @@
     btn.classList.add("chosen");
     count++;
     countEl.textContent = count;
-    setTimeout(showQuestion, 600);
+    if (questionLimit && count >= questionLimit) {
+      setTimeout(showEndScreen, 600);
+    } else {
+      setTimeout(showQuestion, 600);
+    }
+  }
+
+  function showEndScreen() {
+    questionView.classList.add("hidden");
+    passView.classList.add("hidden");
+    revealView.classList.add("hidden");
+    gameActionsBar.classList.add("hidden");
+    endView.classList.remove("hidden");
+    if (gameMode === "2p") {
+      endText.textContent = "Game over! You agreed on " + twoPlayer.agreements + "/" + twoPlayer.rounds + " questions.";
+    } else {
+      endText.textContent = "You answered " + count + (count === 1 ? " question!" : " questions!");
+    }
   }
 
   function startRound() {
@@ -1067,6 +1141,9 @@
 
     revealResult.textContent = agree ? "🎉 You both picked the same thing!" : "🤔 You picked differently!";
     revealResult.className = "reveal-result " + (agree ? "agree" : "disagree");
+
+    twoPlayer.finished = questionLimit && twoPlayer.rounds >= questionLimit;
+    nextRoundBtn.textContent = twoPlayer.finished ? "🏁 See Results" : "Next Round 🔀";
   }
 
   function choose2p(letter) {
@@ -1100,6 +1177,8 @@
     applyColors();
     homeScreen.classList.add("hidden");
     gameScreen.classList.remove("hidden");
+    endView.classList.add("hidden");
+    gameActionsBar.classList.remove("hidden");
 
     soloCounterText.classList.toggle("hidden", gameMode === "2p");
     twoPCounterText.classList.toggle("hidden", gameMode !== "2p");
@@ -1137,10 +1216,15 @@
     if (gameMode === "2p") choose2p("b");
     else chooseOption(optionB);
   });
-  nextRoundBtn.addEventListener("click", startRound);
+  nextRoundBtn.addEventListener("click", () => {
+    if (twoPlayer.finished) showEndScreen();
+    else startRound();
+  });
   nextBtn.addEventListener("click", showQuestion);
   startBtn.addEventListener("click", startGame);
   homeBtn.addEventListener("click", goHome);
+  endHomeBtn.addEventListener("click", goHome);
+  playAgainBtn.addEventListener("click", startGame);
   bgColorInput.addEventListener("input", applyColors);
   textColorInput.addEventListener("input", applyColors);
   bubbleAInput.addEventListener("input", applyColors);
@@ -1149,6 +1233,7 @@
 
   renderCategories();
   renderModes();
+  renderLimits();
   applyColors();
 </script>
 
