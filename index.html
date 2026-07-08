@@ -220,6 +220,26 @@
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
   }
 
+  .player-names {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .player-names input[type="text"] {
+    flex: 1;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    font-family: inherit;
+  }
+
+  .player-names input[type="text"]:focus {
+    outline: none;
+    border-color: #ff5f7e;
+  }
+
   /* --- Game screen --- */
   .counter {
     display: inline-block;
@@ -330,6 +350,77 @@
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
   }
 
+  .turn-banner {
+    background: #fff0f3;
+    color: #ff5f7e;
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+  }
+
+  .pass-box {
+    padding: 40px 10px;
+  }
+
+  .pass-emoji {
+    font-size: 3rem;
+    margin-bottom: 12px;
+  }
+
+  .pass-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .reveal-result {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+
+  .reveal-result.agree {
+    background: #e6fff2;
+    color: #1fa15a;
+  }
+
+  .reveal-result.disagree {
+    background: #fff4e6;
+    color: #d98324;
+  }
+
+  .reveal-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .reveal-pick {
+    flex: 1;
+    background: #f7f7ff;
+    border-radius: 16px;
+    padding: 16px 12px;
+  }
+
+  .reveal-name {
+    font-size: 0.8rem;
+    color: #999;
+    font-weight: bold;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .reveal-choice {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+
   footer {
     margin-top: 24px;
     font-size: 0.75rem;
@@ -351,6 +442,13 @@
 
       <div class="section-label hidden" id="customCategoryLabel">Your Categories</div>
       <div class="category-grid" id="customCategoryGrid"></div>
+
+      <div class="section-label">Players</div>
+      <div class="category-grid" id="modeGrid"></div>
+      <div class="player-names hidden" id="playerNamesBox">
+        <input type="text" id="p1NameInput" placeholder="Player 1 name" maxlength="16" />
+        <input type="text" id="p2NameInput" placeholder="Player 2 name" maxlength="16" />
+      </div>
 
       <div class="section-label">Colors</div>
       <div class="color-grid">
@@ -380,15 +478,38 @@
     <div id="gameScreen" class="hidden">
       <h1 id="gameTitle">Would You Rather? 🤔</h1>
       <p class="subtitle">Pick a side. There's no wrong answer... except maybe eating a bug.</p>
-      <div class="counter">Questions answered: <span id="count">0</span></div>
-
-      <div class="question-box" id="questionBox">
-        <div id="question">Loading...</div>
+      <div class="counter" id="counterBox">
+        <span id="soloCounterText">Questions answered: <span id="count">0</span></span>
+        <span id="twoPCounterText" class="hidden">Agreements: <span id="agreeCount">0</span>/<span id="roundCount">0</span></span>
       </div>
 
-      <div class="choices">
-        <button class="choice-btn" id="optionA"></button>
-        <button class="choice-btn" id="optionB"></button>
+      <div id="questionView">
+        <div class="turn-banner hidden" id="turnBanner"></div>
+        <div class="question-box" id="questionBox">
+          <div id="question">Loading...</div>
+        </div>
+
+        <div class="choices">
+          <button class="choice-btn" id="optionA"></button>
+          <button class="choice-btn" id="optionB"></button>
+        </div>
+      </div>
+
+      <div id="passView" class="hidden">
+        <div class="pass-box">
+          <div class="pass-emoji">🙈</div>
+          <div class="pass-text" id="passText">Pass the device to Player 2</div>
+          <button class="start-btn" id="passReadyBtn">I'm Ready ➡️</button>
+        </div>
+      </div>
+
+      <div id="revealView" class="hidden">
+        <div class="reveal-result" id="revealResult"></div>
+        <div class="reveal-row">
+          <div class="reveal-pick" id="revealP1"></div>
+          <div class="reveal-pick" id="revealP2"></div>
+        </div>
+        <button class="start-btn" id="nextRoundBtn">Next Round 🔀</button>
       </div>
 
       <div class="game-actions">
@@ -525,6 +646,23 @@
   let count = 0;
   let chosen = false;
 
+  const modes = [
+    { id: "solo", label: "🧍 Solo" },
+    { id: "2p", label: "🧍🧍 2 Players" },
+  ];
+
+  let gameMode = "solo";
+  let twoPlayer = {
+    p1Name: "Player 1",
+    p2Name: "Player 2",
+    turn: 1,
+    p1Answer: null,
+    p2Answer: null,
+    currentQuestion: null,
+    agreements: 0,
+    rounds: 0,
+  };
+
   const homeScreen = document.getElementById("homeScreen");
   const gameScreen = document.getElementById("gameScreen");
   const categoryGrid = document.getElementById("categoryGrid");
@@ -537,6 +675,10 @@
   const homeBtn = document.getElementById("homeBtn");
   const customCategoryInput = document.getElementById("customCategory");
   const addCustomBtn = document.getElementById("addCustomBtn");
+  const modeGrid = document.getElementById("modeGrid");
+  const playerNamesBox = document.getElementById("playerNamesBox");
+  const p1NameInput = document.getElementById("p1NameInput");
+  const p2NameInput = document.getElementById("p2NameInput");
 
   const questionEl = document.getElementById("question");
   const questionBox = document.getElementById("questionBox");
@@ -544,6 +686,20 @@
   const optionB = document.getElementById("optionB");
   const nextBtn = document.getElementById("nextBtn");
   const countEl = document.getElementById("count");
+  const soloCounterText = document.getElementById("soloCounterText");
+  const twoPCounterText = document.getElementById("twoPCounterText");
+  const agreeCountEl = document.getElementById("agreeCount");
+  const roundCountEl = document.getElementById("roundCount");
+  const questionView = document.getElementById("questionView");
+  const passView = document.getElementById("passView");
+  const revealView = document.getElementById("revealView");
+  const turnBanner = document.getElementById("turnBanner");
+  const passText = document.getElementById("passText");
+  const passReadyBtn = document.getElementById("passReadyBtn");
+  const revealResult = document.getElementById("revealResult");
+  const revealP1 = document.getElementById("revealP1");
+  const revealP2 = document.getElementById("revealP2");
+  const nextRoundBtn = document.getElementById("nextRoundBtn");
 
   function shade(hex, percent) {
     const num = parseInt(hex.slice(1), 16);
@@ -635,6 +791,21 @@
     });
   }
 
+  function renderModes() {
+    modeGrid.innerHTML = "";
+    modes.forEach((m) => {
+      const btn = document.createElement("button");
+      btn.className = "category-btn" + (m.id === gameMode ? " selected" : "");
+      btn.textContent = m.label;
+      btn.addEventListener("click", () => {
+        gameMode = m.id;
+        playerNamesBox.classList.toggle("hidden", gameMode !== "2p");
+        renderModes();
+      });
+      modeGrid.appendChild(btn);
+    });
+  }
+
   function buildPool() {
     if (selectedCategory === "all") {
       pool = questions.concat(customQuestions);
@@ -701,6 +872,74 @@
     setTimeout(showQuestion, 600);
   }
 
+  function startRound() {
+    twoPlayer.turn = 1;
+    twoPlayer.p1Answer = null;
+    twoPlayer.p2Answer = null;
+    twoPlayer.currentQuestion = pickQuestion();
+    questionEl.textContent = "Would you rather...";
+    optionA.textContent = twoPlayer.currentQuestion.a;
+    optionB.textContent = twoPlayer.currentQuestion.b;
+    turnBanner.classList.remove("hidden");
+    turnBanner.textContent = "🙈 " + twoPlayer.p1Name + "'s turn — pick secretly!";
+    revealView.classList.add("hidden");
+    passView.classList.add("hidden");
+    questionView.classList.remove("hidden");
+    questionBox.classList.add("pop");
+    setTimeout(() => questionBox.classList.remove("pop"), 150);
+  }
+
+  function buildRevealCard(container, name, choiceText) {
+    container.innerHTML = "";
+    const nameEl = document.createElement("div");
+    nameEl.className = "reveal-name";
+    nameEl.textContent = name;
+    const choiceEl = document.createElement("div");
+    choiceEl.className = "reveal-choice";
+    choiceEl.textContent = choiceText;
+    container.appendChild(nameEl);
+    container.appendChild(choiceEl);
+  }
+
+  function showReveal() {
+    questionView.classList.add("hidden");
+    passView.classList.add("hidden");
+    revealView.classList.remove("hidden");
+
+    const q = twoPlayer.currentQuestion;
+    const p1Text = twoPlayer.p1Answer === "a" ? q.a : q.b;
+    const p2Text = twoPlayer.p2Answer === "a" ? q.a : q.b;
+    buildRevealCard(revealP1, twoPlayer.p1Name, p1Text);
+    buildRevealCard(revealP2, twoPlayer.p2Name, p2Text);
+
+    twoPlayer.rounds++;
+    const agree = twoPlayer.p1Answer === twoPlayer.p2Answer;
+    if (agree) twoPlayer.agreements++;
+    agreeCountEl.textContent = twoPlayer.agreements;
+    roundCountEl.textContent = twoPlayer.rounds;
+
+    revealResult.textContent = agree ? "🎉 You both picked the same thing!" : "🤔 You picked differently!";
+    revealResult.className = "reveal-result " + (agree ? "agree" : "disagree");
+  }
+
+  function choose2p(letter) {
+    if (twoPlayer.turn === 1) {
+      twoPlayer.p1Answer = letter;
+      twoPlayer.turn = 2;
+      questionView.classList.add("hidden");
+      passView.classList.remove("hidden");
+      passText.textContent = "Pass the device to " + twoPlayer.p2Name;
+      passReadyBtn.onclick = () => {
+        passView.classList.add("hidden");
+        questionView.classList.remove("hidden");
+        turnBanner.textContent = "🙈 " + twoPlayer.p2Name + "'s turn — pick secretly!";
+      };
+    } else {
+      twoPlayer.p2Answer = letter;
+      showReveal();
+    }
+  }
+
   function startGame() {
     if (customCategoryInput.value.trim()) {
       addCustomCategory();
@@ -712,11 +951,30 @@
     }
     startMsg.classList.add("hidden");
     applyColors();
-    count = 0;
-    countEl.textContent = count;
     homeScreen.classList.add("hidden");
     gameScreen.classList.remove("hidden");
-    showQuestion();
+
+    soloCounterText.classList.toggle("hidden", gameMode === "2p");
+    twoPCounterText.classList.toggle("hidden", gameMode !== "2p");
+    nextBtn.classList.toggle("hidden", gameMode === "2p");
+
+    if (gameMode === "2p") {
+      twoPlayer.p1Name = p1NameInput.value.trim() || "Player 1";
+      twoPlayer.p2Name = p2NameInput.value.trim() || "Player 2";
+      twoPlayer.agreements = 0;
+      twoPlayer.rounds = 0;
+      agreeCountEl.textContent = "0";
+      roundCountEl.textContent = "0";
+      startRound();
+    } else {
+      count = 0;
+      countEl.textContent = count;
+      turnBanner.classList.add("hidden");
+      questionView.classList.remove("hidden");
+      passView.classList.add("hidden");
+      revealView.classList.add("hidden");
+      showQuestion();
+    }
   }
 
   function goHome() {
@@ -724,8 +982,15 @@
     homeScreen.classList.remove("hidden");
   }
 
-  optionA.addEventListener("click", () => chooseOption(optionA));
-  optionB.addEventListener("click", () => chooseOption(optionB));
+  optionA.addEventListener("click", () => {
+    if (gameMode === "2p") choose2p("a");
+    else chooseOption(optionA);
+  });
+  optionB.addEventListener("click", () => {
+    if (gameMode === "2p") choose2p("b");
+    else chooseOption(optionB);
+  });
+  nextRoundBtn.addEventListener("click", startRound);
   nextBtn.addEventListener("click", showQuestion);
   startBtn.addEventListener("click", startGame);
   homeBtn.addEventListener("click", goHome);
@@ -734,6 +999,7 @@
   addCustomBtn.addEventListener("click", addCustomCategory);
 
   renderCategories();
+  renderModes();
   applyColors();
 </script>
 
