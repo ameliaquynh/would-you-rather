@@ -1,0 +1,2069 @@
+{
+  "categories": [
+    "Food & Drink",
+    "Superpowers & Fantasy",
+    "Travel & Adventure",
+    "Animals & Nature",
+    "Pop Culture & Entertainment",
+    "Sports & Games",
+    "School & Learning",
+    "Money & Lifestyle",
+    "Technology & Future",
+    "Silly & Absurd",
+    "Everyday Life & Habits",
+    "Holidays & Celebrations",
+    "Music & Arts",
+    "Friends & Family",
+    "Weather & Seasons",
+    "Space & Sci-Fi"
+  ],
+  "count": 341,
+  "questions": [
+    {
+      "id": 1,
+      "category": "Food & Drink",
+      "option_a": "Only be able to eat breakfast foods for the rest of your life",
+      "option_b": "Only be able to eat dinner foods for the rest of your life"
+    },
+    {
+      "id": 2,
+      "category": "Food & Drink",
+      "option_a": "Give up pizza forever",
+      "option_b": "Give up ice cream forever"
+    },
+    {
+      "id": 3,
+      "category": "Food & Drink",
+      "option_a": "Always have to eat your food cold",
+      "option_b": "Always have to eat your food too hot"
+    },
+    {
+      "id": 4,
+      "category": "Food & Drink",
+      "option_a": "Only drink through a straw for the rest of your life",
+      "option_b": "Never use utensils again"
+    },
+    {
+      "id": 5,
+      "category": "Food & Drink",
+      "option_a": "Have unlimited pancakes for breakfast every day",
+      "option_b": "Have unlimited tacos for dinner every day"
+    },
+    {
+      "id": 6,
+      "category": "Food & Drink",
+      "option_a": "Never eat chocolate again",
+      "option_b": "Never eat cheese again"
+    },
+    {
+      "id": 7,
+      "category": "Food & Drink",
+      "option_a": "Only be able to eat foods that are green",
+      "option_b": "Only be able to eat foods that are orange"
+    },
+    {
+      "id": 8,
+      "category": "Food & Drink",
+      "option_a": "Eat a food you dislike every day",
+      "option_b": "Never eat your favorite food again"
+    },
+    {
+      "id": 9,
+      "category": "Food & Drink",
+      "option_a": "Have a bottomless bowl of your favorite soup",
+      "option_b": "Have a bottomless plate of your favorite dessert"
+    },
+    {
+      "id": 10,
+      "category": "Food & Drink",
+      "option_a": "Only drink water for the rest of your life",
+      "option_b": "Only drink juice for the rest of your life"
+    },
+    {
+      "id": 11,
+      "category": "Food & Drink",
+      "option_a": "Cook every meal yourself for a year",
+      "option_b": "Eat only what other people cook for a year"
+    },
+    {
+      "id": 12,
+      "category": "Food & Drink",
+      "option_a": "Have food that never gets cold",
+      "option_b": "Have drinks that never get warm"
+    },
+    {
+      "id": 13,
+      "category": "Food & Drink",
+      "option_a": "Eat the same lunch every day for a year",
+      "option_b": "Never know what your dinner will be until it arrives"
+    },
+    {
+      "id": 14,
+      "category": "Food & Drink",
+      "option_a": "Try one bite of a strange new food every day",
+      "option_b": "Always eat only foods you already know you like"
+    },
+    {
+      "id": 15,
+      "category": "Food & Drink",
+      "option_a": "Give up all fast food forever",
+      "option_b": "Give up all candy forever"
+    },
+    {
+      "id": 16,
+      "category": "Food & Drink",
+      "option_a": "Have a personal chef who only makes healthy food",
+      "option_b": "Have a personal chef who only makes desserts"
+    },
+    {
+      "id": 17,
+      "category": "Food & Drink",
+      "option_a": "Only eat food that's very spicy",
+      "option_b": "Only eat food with no seasoning at all"
+    },
+    {
+      "id": 18,
+      "category": "Food & Drink",
+      "option_a": "Never be able to snack between meals",
+      "option_b": "Only be allowed to snack, never a full meal"
+    },
+    {
+      "id": 19,
+      "category": "Food & Drink",
+      "option_a": "Eat breakfast food for every meal",
+      "option_b": "Eat dessert for every meal"
+    },
+    {
+      "id": 20,
+      "category": "Food & Drink",
+      "option_a": "Grow all your own vegetables for life",
+      "option_b": "Bake all your own bread for life"
+    },
+    {
+      "id": 21,
+      "category": "Food & Drink",
+      "option_a": "Never eat leftovers again",
+      "option_b": "Only ever eat leftovers"
+    },
+    {
+      "id": 22,
+      "category": "Food & Drink",
+      "option_a": "Only eat foods that crunch",
+      "option_b": "Only eat foods that are soft and smooth"
+    },
+    {
+      "id": 23,
+      "category": "Food & Drink",
+      "option_a": "Have unlimited free snacks wherever you go",
+      "option_b": "Have unlimited free drinks wherever you go"
+    },
+    {
+      "id": 24,
+      "category": "Food & Drink",
+      "option_a": "Eat dessert before every meal",
+      "option_b": "Never have dessert again"
+    },
+    {
+      "id": 25,
+      "category": "Food & Drink",
+      "option_a": "Only be allowed fruit as your sweet treat",
+      "option_b": "Only be allowed vegetables as your salty treat"
+    },
+    {
+      "id": 26,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to fly",
+      "option_b": "Be able to turn invisible"
+    },
+    {
+      "id": 27,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to read minds",
+      "option_b": "Be able to see the future"
+    },
+    {
+      "id": 28,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to freeze time",
+      "option_b": "Be able to travel through time"
+    },
+    {
+      "id": 29,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Have super strength",
+      "option_b": "Have super speed"
+    },
+    {
+      "id": 30,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to breathe underwater",
+      "option_b": "Never need to sleep"
+    },
+    {
+      "id": 31,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to talk to animals",
+      "option_b": "Be able to speak every human language"
+    },
+    {
+      "id": 32,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to shrink to the size of an ant",
+      "option_b": "Be able to grow to the size of a building"
+    },
+    {
+      "id": 33,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Have a pet dragon",
+      "option_b": "Have a flying carpet"
+    },
+    {
+      "id": 34,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Turn anything you touch to gold",
+      "option_b": "Turn anything you touch into chocolate"
+    },
+    {
+      "id": 35,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to teleport anywhere instantly",
+      "option_b": "Have unlimited free travel forever"
+    },
+    {
+      "id": 36,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to control fire",
+      "option_b": "Be able to control water"
+    },
+    {
+      "id": 37,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to heal any injury instantly",
+      "option_b": "Never get sick at all"
+    },
+    {
+      "id": 38,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Get one enormous wish today",
+      "option_b": "Get unlimited small wishes for the rest of your life"
+    },
+    {
+      "id": 39,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be a wizard with powerful spells",
+      "option_b": "Be a knight with unbeatable swordplay skill"
+    },
+    {
+      "id": 40,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Live in a floating castle in the sky",
+      "option_b": "Live in a hidden castle under the sea"
+    },
+    {
+      "id": 41,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Have the power of invisibility",
+      "option_b": "Have the power of super hearing"
+    },
+    {
+      "id": 42,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Command an army of robots",
+      "option_b": "Command an army of dragons"
+    },
+    {
+      "id": 43,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to talk to plants",
+      "option_b": "Be able to talk to the weather"
+    },
+    {
+      "id": 44,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Have wings like a bird",
+      "option_b": "Have fins like a mermaid"
+    },
+    {
+      "id": 45,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be able to turn into any animal at will",
+      "option_b": "Be able to turn any object into a different object"
+    },
+    {
+      "id": 46,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be immune to all magic spells",
+      "option_b": "Be immune to all bad luck"
+    },
+    {
+      "id": 47,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Have a genie who only ever tells the truth",
+      "option_b": "Have a genie who's mischievous but very powerful"
+    },
+    {
+      "id": 48,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Live in a world with magic but no technology",
+      "option_b": "Live in a world with amazing technology but no magic"
+    },
+    {
+      "id": 49,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Be the hero of your own storybook",
+      "option_b": "Be the narrator who knows every character's secrets"
+    },
+    {
+      "id": 50,
+      "category": "Superpowers & Fantasy",
+      "option_a": "Have the power to make anyone laugh",
+      "option_b": "Have the power to make anyone believe you"
+    },
+    {
+      "id": 51,
+      "category": "Travel & Adventure",
+      "option_a": "Explore the deepest part of the ocean",
+      "option_b": "Climb the tallest mountain in the world"
+    },
+    {
+      "id": 52,
+      "category": "Travel & Adventure",
+      "option_a": "Visit every country on Earth over your lifetime",
+      "option_b": "Live for a whole year in the one country you love most"
+    },
+    {
+      "id": 53,
+      "category": "Travel & Adventure",
+      "option_a": "Go on a two-week road trip",
+      "option_b": "Go on a two-week cruise"
+    },
+    {
+      "id": 54,
+      "category": "Travel & Adventure",
+      "option_a": "Camp in a tent under the stars",
+      "option_b": "Stay in a treehouse in a rainforest"
+    },
+    {
+      "id": 55,
+      "category": "Travel & Adventure",
+      "option_a": "Visit the past",
+      "option_b": "Visit the future"
+    },
+    {
+      "id": 56,
+      "category": "Travel & Adventure",
+      "option_a": "Explore a jungle",
+      "option_b": "Explore a desert"
+    },
+    {
+      "id": 57,
+      "category": "Travel & Adventure",
+      "option_a": "Take a hot air balloon ride",
+      "option_b": "Take a submarine ride"
+    },
+    {
+      "id": 58,
+      "category": "Travel & Adventure",
+      "option_a": "Backpack through a new country with no plans",
+      "option_b": "Follow a detailed itinerary someone else planned"
+    },
+    {
+      "id": 59,
+      "category": "Travel & Adventure",
+      "option_a": "Visit a real castle",
+      "option_b": "Visit a real pyramid"
+    },
+    {
+      "id": 60,
+      "category": "Travel & Adventure",
+      "option_a": "Sleep in an igloo in the Arctic",
+      "option_b": "Sleep in a hut on a tropical beach"
+    },
+    {
+      "id": 61,
+      "category": "Travel & Adventure",
+      "option_a": "Travel only by train for the rest of your life",
+      "option_b": "Travel only by boat for the rest of your life"
+    },
+    {
+      "id": 62,
+      "category": "Travel & Adventure",
+      "option_a": "Explore an abandoned old town",
+      "option_b": "Explore a brand new city being built"
+    },
+    {
+      "id": 63,
+      "category": "Travel & Adventure",
+      "option_a": "Go on a safari to see wild animals",
+      "option_b": "Go diving to see coral reefs"
+    },
+    {
+      "id": 64,
+      "category": "Travel & Adventure",
+      "option_a": "Travel to space and see Earth from orbit",
+      "option_b": "Travel to the bottom of the ocean"
+    },
+    {
+      "id": 65,
+      "category": "Travel & Adventure",
+      "option_a": "Get lost in a new city for a day",
+      "option_b": "Follow a guided tour the whole trip"
+    },
+    {
+      "id": 66,
+      "category": "Travel & Adventure",
+      "option_a": "Hike to a hidden waterfall",
+      "option_b": "Sail to a secret island"
+    },
+    {
+      "id": 67,
+      "category": "Travel & Adventure",
+      "option_a": "Visit a famous ancient ruin",
+      "option_b": "Visit a modern wonder of engineering"
+    },
+    {
+      "id": 68,
+      "category": "Travel & Adventure",
+      "option_a": "Travel somewhere new every single year",
+      "option_b": "Go back to your favorite place every year"
+    },
+    {
+      "id": 69,
+      "category": "Travel & Adventure",
+      "option_a": "Ride a camel across a desert",
+      "option_b": "Ride a sled across snow"
+    },
+    {
+      "id": 70,
+      "category": "Travel & Adventure",
+      "option_a": "Take a trip with no phone or internet",
+      "option_b": "Take a trip where you document every moment online"
+    },
+    {
+      "id": 71,
+      "category": "Travel & Adventure",
+      "option_a": "Explore caves deep underground",
+      "option_b": "Explore towers high above a city"
+    },
+    {
+      "id": 72,
+      "category": "Travel & Adventure",
+      "option_a": "Travel the world for free but always alone",
+      "option_b": "Travel with your best friends but pay your own way"
+    },
+    {
+      "id": 73,
+      "category": "Animals & Nature",
+      "option_a": "Have a pet elephant",
+      "option_b": "Have a pet dolphin"
+    },
+    {
+      "id": 74,
+      "category": "Animals & Nature",
+      "option_a": "Be able to fly like a bird for a day",
+      "option_b": "Be able to breathe underwater like a fish for a day"
+    },
+    {
+      "id": 75,
+      "category": "Animals & Nature",
+      "option_a": "Live on a farm with animals",
+      "option_b": "Live in a house full of aquarium fish"
+    },
+    {
+      "id": 76,
+      "category": "Animals & Nature",
+      "option_a": "Cuddle a baby panda",
+      "option_b": "Cuddle a baby tiger"
+    },
+    {
+      "id": 77,
+      "category": "Animals & Nature",
+      "option_a": "Have a dog that can talk",
+      "option_b": "Have a cat that can grant wishes"
+    },
+    {
+      "id": 78,
+      "category": "Animals & Nature",
+      "option_a": "Watch a pod of whales up close",
+      "option_b": "Watch a pride of lions up close"
+    },
+    {
+      "id": 79,
+      "category": "Animals & Nature",
+      "option_a": "Live somewhere with no bugs, but no butterflies either",
+      "option_b": "Live somewhere with butterflies, but also lots of bugs"
+    },
+    {
+      "id": 80,
+      "category": "Animals & Nature",
+      "option_a": "Adopt every stray animal you meet",
+      "option_b": "Only ever have one pet your whole life"
+    },
+    {
+      "id": 81,
+      "category": "Animals & Nature",
+      "option_a": "Explore a rainforest full of colorful birds",
+      "option_b": "Explore a coral reef full of colorful fish"
+    },
+    {
+      "id": 82,
+      "category": "Animals & Nature",
+      "option_a": "Have the world's biggest ant farm",
+      "option_b": "Have the world's biggest butterfly garden"
+    },
+    {
+      "id": 83,
+      "category": "Animals & Nature",
+      "option_a": "Be followed everywhere by a friendly puppy",
+      "option_b": "Be followed everywhere by a friendly kitten"
+    },
+    {
+      "id": 84,
+      "category": "Animals & Nature",
+      "option_a": "See a shooting star every night",
+      "option_b": "See a rainbow every day"
+    },
+    {
+      "id": 85,
+      "category": "Animals & Nature",
+      "option_a": "Live near the mountains",
+      "option_b": "Live near the ocean"
+    },
+    {
+      "id": 86,
+      "category": "Animals & Nature",
+      "option_a": "Have a garden full of every flower",
+      "option_b": "Have a garden full of every fruit tree"
+    },
+    {
+      "id": 87,
+      "category": "Animals & Nature",
+      "option_a": "Watch baby sea turtles race to the ocean",
+      "option_b": "Watch baby birds learn to fly"
+    },
+    {
+      "id": 88,
+      "category": "Animals & Nature",
+      "option_a": "Have a horse you could ride anywhere",
+      "option_b": "Have a boat you could sail anywhere"
+    },
+    {
+      "id": 89,
+      "category": "Animals & Nature",
+      "option_a": "Wake up every morning to birds singing",
+      "option_b": "Wake up every morning to waves crashing"
+    },
+    {
+      "id": 90,
+      "category": "Animals & Nature",
+      "option_a": "Spend a day at a wildlife sanctuary",
+      "option_b": "Spend a day at a botanical garden"
+    },
+    {
+      "id": 91,
+      "category": "Animals & Nature",
+      "option_a": "Be able to understand what your pet is thinking",
+      "option_b": "Let your pet understand what you're thinking"
+    },
+    {
+      "id": 92,
+      "category": "Animals & Nature",
+      "option_a": "Live somewhere it snows every winter",
+      "option_b": "Live somewhere it's warm all year"
+    },
+    {
+      "id": 93,
+      "category": "Animals & Nature",
+      "option_a": "Raise a litter of puppies",
+      "option_b": "Raise a litter of kittens"
+    },
+    {
+      "id": 94,
+      "category": "Animals & Nature",
+      "option_a": "Go on a bird-watching hike",
+      "option_b": "Go on a stargazing camping trip"
+    },
+    {
+      "id": 95,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Only watch movies for the rest of your life",
+      "option_b": "Only watch TV shows for the rest of your life"
+    },
+    {
+      "id": 96,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Be a background extra in a blockbuster movie",
+      "option_b": "Be the star of a movie nobody watches"
+    },
+    {
+      "id": 97,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Meet your favorite musician",
+      "option_b": "Meet your favorite author"
+    },
+    {
+      "id": 98,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Only listen to music from one decade forever",
+      "option_b": "Only watch movies from one decade forever"
+    },
+    {
+      "id": 99,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Have your life turned into a documentary",
+      "option_b": "Have your life turned into a cartoon"
+    },
+    {
+      "id": 100,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Read the book before watching the movie",
+      "option_b": "Watch the movie before reading the book"
+    },
+    {
+      "id": 101,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Binge-watch an entire show in one day",
+      "option_b": "Watch one episode a week for a year"
+    },
+    {
+      "id": 102,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Be famous for something you're proud of",
+      "option_b": "Be anonymous but comfortable"
+    },
+    {
+      "id": 103,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Attend a huge concert",
+      "option_b": "Attend a small private show with your favorite artist"
+    },
+    {
+      "id": 104,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Have a cameo in your favorite show",
+      "option_b": "Write an episode of your favorite show"
+    },
+    {
+      "id": 105,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Only be able to watch comedies",
+      "option_b": "Only be able to watch dramas"
+    },
+    {
+      "id": 106,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Ask your favorite author one question about their next book",
+      "option_b": "Get an early copy with no chance to ask questions"
+    },
+    {
+      "id": 107,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Have unlimited tickets to movie premieres",
+      "option_b": "Have unlimited tickets to live concerts"
+    },
+    {
+      "id": 108,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Be a judge on a talent show",
+      "option_b": "Be a contestant on a talent show"
+    },
+    {
+      "id": 109,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Learn to play a musical instrument perfectly overnight",
+      "option_b": "Learn a new language perfectly overnight"
+    },
+    {
+      "id": 110,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Watch your favorite show again for the first time",
+      "option_b": "Discover a brand-new favorite show"
+    },
+    {
+      "id": 111,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Have your own talk show",
+      "option_b": "Have your own podcast"
+    },
+    {
+      "id": 112,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Only read fiction for the rest of your life",
+      "option_b": "Only read nonfiction for the rest of your life"
+    },
+    {
+      "id": 113,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Go to a costume party as your favorite hero",
+      "option_b": "Go to a costume party as your favorite villain"
+    },
+    {
+      "id": 114,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Have front row seats to any event",
+      "option_b": "Have backstage access to any event"
+    },
+    {
+      "id": 115,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Write a bestselling book",
+      "option_b": "Direct a blockbuster movie"
+    },
+    {
+      "id": 116,
+      "category": "Pop Culture & Entertainment",
+      "option_a": "Have perfect recall of every movie you've seen",
+      "option_b": "Have perfect recall of every song you've heard"
+    },
+    {
+      "id": 117,
+      "category": "Sports & Games",
+      "option_a": "Be amazing at every team sport",
+      "option_b": "Be amazing at every individual sport"
+    },
+    {
+      "id": 118,
+      "category": "Sports & Games",
+      "option_a": "Win an Olympic gold medal",
+      "option_b": "Win a world championship in esports"
+    },
+    {
+      "id": 119,
+      "category": "Sports & Games",
+      "option_a": "Play board games every weekend",
+      "option_b": "Play video games every weekend"
+    },
+    {
+      "id": 120,
+      "category": "Sports & Games",
+      "option_a": "Be the team captain",
+      "option_b": "Be the star player who lets someone else lead"
+    },
+    {
+      "id": 121,
+      "category": "Sports & Games",
+      "option_a": "Play sports outdoors in any weather",
+      "option_b": "Only ever play sports indoors"
+    },
+    {
+      "id": 122,
+      "category": "Sports & Games",
+      "option_a": "Be great at chess",
+      "option_b": "Be great at basketball"
+    },
+    {
+      "id": 123,
+      "category": "Sports & Games",
+      "option_a": "Win by a little bit every time",
+      "option_b": "Win big, but only sometimes"
+    },
+    {
+      "id": 124,
+      "category": "Sports & Games",
+      "option_a": "Have season tickets to your favorite sports team",
+      "option_b": "Have unlimited video games for life"
+    },
+    {
+      "id": 125,
+      "category": "Sports & Games",
+      "option_a": "Compete in the Olympics",
+      "option_b": "Coach an Olympic team"
+    },
+    {
+      "id": 126,
+      "category": "Sports & Games",
+      "option_a": "Play a sport that requires teamwork",
+      "option_b": "Play a sport where it's just you against the clock"
+    },
+    {
+      "id": 127,
+      "category": "Sports & Games",
+      "option_a": "Never lose a board game again",
+      "option_b": "Never lose a video game again"
+    },
+    {
+      "id": 128,
+      "category": "Sports & Games",
+      "option_a": "Be able to run a marathon easily",
+      "option_b": "Be able to swim across a lake easily"
+    },
+    {
+      "id": 129,
+      "category": "Sports & Games",
+      "option_a": "Watch sports live in the stadium",
+      "option_b": "Watch from home with perfect commentary"
+    },
+    {
+      "id": 130,
+      "category": "Sports & Games",
+      "option_a": "Learn a new sport every year",
+      "option_b": "Master one sport for life"
+    },
+    {
+      "id": 131,
+      "category": "Sports & Games",
+      "option_a": "Play a sport in the Winter Olympics",
+      "option_b": "Play a sport in the Summer Olympics"
+    },
+    {
+      "id": 132,
+      "category": "Sports & Games",
+      "option_a": "Be known as the most skilled player",
+      "option_b": "Be known as the best teammate"
+    },
+    {
+      "id": 133,
+      "category": "Sports & Games",
+      "option_a": "Have unlimited access to a home gym",
+      "option_b": "Have unlimited access to a game room"
+    },
+    {
+      "id": 134,
+      "category": "Sports & Games",
+      "option_a": "Play card games with friends",
+      "option_b": "Play outdoor games with friends"
+    },
+    {
+      "id": 135,
+      "category": "Sports & Games",
+      "option_a": "Be a professional athlete with a short career",
+      "option_b": "Be an amateur athlete for life"
+    },
+    {
+      "id": 136,
+      "category": "Sports & Games",
+      "option_a": "Compete solo in a competition",
+      "option_b": "Always compete as part of a team"
+    },
+    {
+      "id": 137,
+      "category": "School & Learning",
+      "option_a": "Take a test you didn't study for",
+      "option_b": "Give a presentation you didn't prepare for"
+    },
+    {
+      "id": 138,
+      "category": "School & Learning",
+      "option_a": "Have homework every night, but short",
+      "option_b": "Have no homework, but one big project every month"
+    },
+    {
+      "id": 139,
+      "category": "School & Learning",
+      "option_a": "Learn everything from books",
+      "option_b": "Learn everything from hands-on experience"
+    },
+    {
+      "id": 140,
+      "category": "School & Learning",
+      "option_a": "Be the strongest student in math",
+      "option_b": "Be the strongest student in reading"
+    },
+    {
+      "id": 141,
+      "category": "School & Learning",
+      "option_a": "Have class outside every day",
+      "option_b": "Always have the newest technology in the classroom"
+    },
+    {
+      "id": 142,
+      "category": "School & Learning",
+      "option_a": "Skip a grade ahead",
+      "option_b": "Repeat your favorite grade"
+    },
+    {
+      "id": 143,
+      "category": "School & Learning",
+      "option_a": "Have one really hard subject",
+      "option_b": "Have many subjects that are all just okay"
+    },
+    {
+      "id": 144,
+      "category": "School & Learning",
+      "option_a": "Pick your own class schedule",
+      "option_b": "Have a surprise schedule every day"
+    },
+    {
+      "id": 145,
+      "category": "School & Learning",
+      "option_a": "Learn a new language",
+      "option_b": "Learn to code"
+    },
+    {
+      "id": 146,
+      "category": "School & Learning",
+      "option_a": "Have unlimited school supplies",
+      "option_b": "Have unlimited books for the library"
+    },
+    {
+      "id": 147,
+      "category": "School & Learning",
+      "option_a": "Take a class trip to a museum",
+      "option_b": "Take a class trip to a science center"
+    },
+    {
+      "id": 148,
+      "category": "School & Learning",
+      "option_a": "Be great at giving presentations",
+      "option_b": "Be great at writing essays"
+    },
+    {
+      "id": 149,
+      "category": "School & Learning",
+      "option_a": "Have shorter school days but classes all year",
+      "option_b": "Have long school days but a longer summer break"
+    },
+    {
+      "id": 150,
+      "category": "School & Learning",
+      "option_a": "Study with friends in a group",
+      "option_b": "Study alone in a quiet room"
+    },
+    {
+      "id": 151,
+      "category": "School & Learning",
+      "option_a": "Have a strict teacher who taught you a lot",
+      "option_b": "Have a laid-back teacher who taught you less"
+    },
+    {
+      "id": 152,
+      "category": "School & Learning",
+      "option_a": "Learn history by reading about it",
+      "option_b": "Learn history by visiting the places it happened"
+    },
+    {
+      "id": 153,
+      "category": "School & Learning",
+      "option_a": "Be really good at memorizing facts",
+      "option_b": "Be really good at solving problems"
+    },
+    {
+      "id": 154,
+      "category": "School & Learning",
+      "option_a": "Take an art class",
+      "option_b": "Take a music class"
+    },
+    {
+      "id": 155,
+      "category": "School & Learning",
+      "option_a": "Have recess every hour",
+      "option_b": "Have one long recess a day"
+    },
+    {
+      "id": 156,
+      "category": "School & Learning",
+      "option_a": "Design your own school subject",
+      "option_b": "Design the school schedule"
+    },
+    {
+      "id": 157,
+      "category": "Money & Lifestyle",
+      "option_a": "Have a lot of money but very little time",
+      "option_b": "Have a lot of time but very little money"
+    },
+    {
+      "id": 158,
+      "category": "Money & Lifestyle",
+      "option_a": "Live in a small house in the city",
+      "option_b": "Live in a big house in the countryside"
+    },
+    {
+      "id": 159,
+      "category": "Money & Lifestyle",
+      "option_a": "Save every dollar you get",
+      "option_b": "Spend it right away"
+    },
+    {
+      "id": 160,
+      "category": "Money & Lifestyle",
+      "option_a": "Have your dream job with average pay",
+      "option_b": "Have an okay job with amazing pay"
+    },
+    {
+      "id": 161,
+      "category": "Money & Lifestyle",
+      "option_a": "Live simply and comfortably",
+      "option_b": "Live large but stressfully"
+    },
+    {
+      "id": 162,
+      "category": "Money & Lifestyle",
+      "option_a": "Get an allowance for doing chores",
+      "option_b": "Get a surprise gift whenever your family feels like it"
+    },
+    {
+      "id": 163,
+      "category": "Money & Lifestyle",
+      "option_a": "Spend money on experiences like trips",
+      "option_b": "Spend money on things like gadgets"
+    },
+    {
+      "id": 164,
+      "category": "Money & Lifestyle",
+      "option_a": "Have one really nice thing",
+      "option_b": "Have five okay things"
+    },
+    {
+      "id": 165,
+      "category": "Money & Lifestyle",
+      "option_a": "Live in a tiny house you own",
+      "option_b": "Live in a big house you rent"
+    },
+    {
+      "id": 166,
+      "category": "Money & Lifestyle",
+      "option_a": "Get paid to do something you love",
+      "option_b": "Get paid more to do something you don't love"
+    },
+    {
+      "id": 167,
+      "category": "Money & Lifestyle",
+      "option_a": "Always find money on the ground",
+      "option_b": "Always get discounts when shopping"
+    },
+    {
+      "id": 168,
+      "category": "Money & Lifestyle",
+      "option_a": "Have enough money saved for emergencies",
+      "option_b": "Have enough money to spend freely"
+    },
+    {
+      "id": 169,
+      "category": "Money & Lifestyle",
+      "option_a": "Share everything you have with friends",
+      "option_b": "Keep your things to yourself"
+    },
+    {
+      "id": 170,
+      "category": "Money & Lifestyle",
+      "option_a": "Work fewer hours for less money",
+      "option_b": "Work more hours for more money"
+    },
+    {
+      "id": 171,
+      "category": "Money & Lifestyle",
+      "option_a": "Inherit an old house full of mysteries",
+      "option_b": "Inherit a new house with no history"
+    },
+    {
+      "id": 172,
+      "category": "Money & Lifestyle",
+      "option_a": "Live somewhere quiet and simple",
+      "option_b": "Live somewhere busy and exciting"
+    },
+    {
+      "id": 173,
+      "category": "Money & Lifestyle",
+      "option_a": "Get one big gift once a year",
+      "option_b": "Get small gifts throughout the year"
+    },
+    {
+      "id": 174,
+      "category": "Money & Lifestyle",
+      "option_a": "Budget carefully for everything",
+      "option_b": "Wing it and hope it works out"
+    },
+    {
+      "id": 175,
+      "category": "Money & Lifestyle",
+      "option_a": "Own a small business",
+      "option_b": "Work for a big company"
+    },
+    {
+      "id": 176,
+      "category": "Money & Lifestyle",
+      "option_a": "Have unlimited books",
+      "option_b": "Have unlimited experiences like trips and events"
+    },
+    {
+      "id": 177,
+      "category": "Technology & Future",
+      "option_a": "Live without your phone for a month",
+      "option_b": "Live without the internet for a month"
+    },
+    {
+      "id": 178,
+      "category": "Technology & Future",
+      "option_a": "Have a robot that does your chores",
+      "option_b": "Have a robot that does your homework"
+    },
+    {
+      "id": 179,
+      "category": "Technology & Future",
+      "option_a": "Own a self-driving car",
+      "option_b": "Own a flying car"
+    },
+    {
+      "id": 180,
+      "category": "Technology & Future",
+      "option_a": "Live in a smart home that does everything for you",
+      "option_b": "Live in a simple home with no technology"
+    },
+    {
+      "id": 181,
+      "category": "Technology & Future",
+      "option_a": "Have a computer that reads your mind",
+      "option_b": "Have a computer that predicts the future"
+    },
+    {
+      "id": 182,
+      "category": "Technology & Future",
+      "option_a": "Travel to the future to see what's next",
+      "option_b": "Travel to the past to see how it all started"
+    },
+    {
+      "id": 183,
+      "category": "Technology & Future",
+      "option_a": "Only communicate by video call",
+      "option_b": "Only communicate by text"
+    },
+    {
+      "id": 184,
+      "category": "Technology & Future",
+      "option_a": "Get the newest phone every year",
+      "option_b": "Have unlimited storage on your current phone forever"
+    },
+    {
+      "id": 185,
+      "category": "Technology & Future",
+      "option_a": "Live in a house run entirely by voice commands",
+      "option_b": "Live in a house with no smart devices at all"
+    },
+    {
+      "id": 186,
+      "category": "Technology & Future",
+      "option_a": "Have a virtual reality headset that feels completely real",
+      "option_b": "Have a drone that films your whole life"
+    },
+    {
+      "id": 187,
+      "category": "Technology & Future",
+      "option_a": "Get your news from robots",
+      "option_b": "Get your news from real people"
+    },
+    {
+      "id": 188,
+      "category": "Technology & Future",
+      "option_a": "Have a computer chip that helps you learn instantly",
+      "option_b": "Have a computer chip that means you never forget anything"
+    },
+    {
+      "id": 189,
+      "category": "Technology & Future",
+      "option_a": "Use only old technology from decades ago",
+      "option_b": "Use only technology from the far future"
+    },
+    {
+      "id": 190,
+      "category": "Technology & Future",
+      "option_a": "Have artificial intelligence do your chores",
+      "option_b": "Have artificial intelligence do your creative projects"
+    },
+    {
+      "id": 191,
+      "category": "Technology & Future",
+      "option_a": "Live where every building is powered by solar panels",
+      "option_b": "Live where every building floats"
+    },
+    {
+      "id": 192,
+      "category": "Technology & Future",
+      "option_a": "Have a smartwatch that tracks everything about your health",
+      "option_b": "Have a smartwatch that reminds you of everything you need to do"
+    },
+    {
+      "id": 193,
+      "category": "Technology & Future",
+      "option_a": "Explore space using a rocket",
+      "option_b": "Explore the deep ocean using a submarine"
+    },
+    {
+      "id": 194,
+      "category": "Technology & Future",
+      "option_a": "Have unlimited fast internet everywhere",
+      "option_b": "Have unlimited battery life on all your devices"
+    },
+    {
+      "id": 195,
+      "category": "Technology & Future",
+      "option_a": "Have a home robot butler",
+      "option_b": "Have a home robot chef"
+    },
+    {
+      "id": 196,
+      "category": "Technology & Future",
+      "option_a": "Test the newest video game console before anyone else",
+      "option_b": "Test the newest phone before anyone else"
+    },
+    {
+      "id": 197,
+      "category": "Technology & Future",
+      "option_a": "Live in a city full of self-driving cars",
+      "option_b": "Live in a city full of flying drones"
+    },
+    {
+      "id": 198,
+      "category": "Technology & Future",
+      "option_a": "Have a program finish your to-do list",
+      "option_b": "Have a program plan your whole day"
+    },
+    {
+      "id": 199,
+      "category": "Silly & Absurd",
+      "option_a": "Have hiccups every hour for the rest of your life",
+      "option_b": "Sneeze every time you laugh"
+    },
+    {
+      "id": 200,
+      "category": "Silly & Absurd",
+      "option_a": "Only be able to whisper",
+      "option_b": "Only be able to shout"
+    },
+    {
+      "id": 201,
+      "category": "Silly & Absurd",
+      "option_a": "Have hair that changes color with your mood",
+      "option_b": "Have skin that changes color with the weather"
+    },
+    {
+      "id": 202,
+      "category": "Silly & Absurd",
+      "option_a": "Talk in rhymes all day",
+      "option_b": "Talk in questions all day"
+    },
+    {
+      "id": 203,
+      "category": "Silly & Absurd",
+      "option_a": "Get the hiccups whenever you're nervous",
+      "option_b": "Yawn whenever you're excited"
+    },
+    {
+      "id": 204,
+      "category": "Silly & Absurd",
+      "option_a": "Wear mismatched socks every day for a year",
+      "option_b": "Wear your shirt inside out every day for a year"
+    },
+    {
+      "id": 205,
+      "category": "Silly & Absurd",
+      "option_a": "Sneeze confetti",
+      "option_b": "Laugh in slow motion"
+    },
+    {
+      "id": 206,
+      "category": "Silly & Absurd",
+      "option_a": "Have a nose that lights up when you're lying",
+      "option_b": "Have ears that wiggle when you're happy"
+    },
+    {
+      "id": 207,
+      "category": "Silly & Absurd",
+      "option_a": "Walk backwards everywhere for a week",
+      "option_b": "Hop on one foot everywhere for a week"
+    },
+    {
+      "id": 208,
+      "category": "Silly & Absurd",
+      "option_a": "Only eat food shaped like animals",
+      "option_b": "Only wear clothes with polka dots"
+    },
+    {
+      "id": 209,
+      "category": "Silly & Absurd",
+      "option_a": "Have a shadow that does its own thing",
+      "option_b": "Have a reflection that's always a step behind"
+    },
+    {
+      "id": 210,
+      "category": "Silly & Absurd",
+      "option_a": "Speak only in movie quotes for a day",
+      "option_b": "Speak only in song lyrics for a day"
+    },
+    {
+      "id": 211,
+      "category": "Silly & Absurd",
+      "option_a": "Have feet as big as skis",
+      "option_b": "Have hands as big as oven mitts"
+    },
+    {
+      "id": 212,
+      "category": "Silly & Absurd",
+      "option_a": "Grow a foot taller overnight",
+      "option_b": "Shrink a foot shorter overnight"
+    },
+    {
+      "id": 213,
+      "category": "Silly & Absurd",
+      "option_a": "Always have staticky hair",
+      "option_b": "Always have a squeaky voice"
+    },
+    {
+      "id": 214,
+      "category": "Silly & Absurd",
+      "option_a": "Wear a costume every single day",
+      "option_b": "Never be allowed to wear your favorite outfit again"
+    },
+    {
+      "id": 215,
+      "category": "Silly & Absurd",
+      "option_a": "Have a pet rock that talks",
+      "option_b": "Have a pet cloud that follows you around"
+    },
+    {
+      "id": 216,
+      "category": "Silly & Absurd",
+      "option_a": "Sound like a robot when you talk",
+      "option_b": "Sound like a cartoon character when you talk"
+    },
+    {
+      "id": 217,
+      "category": "Silly & Absurd",
+      "option_a": "Have a stomach that growls like a lion",
+      "option_b": "Have a sneeze that sounds like a trumpet"
+    },
+    {
+      "id": 218,
+      "category": "Silly & Absurd",
+      "option_a": "Only be able to run everywhere, never walk",
+      "option_b": "Only be able to skip everywhere, never run"
+    },
+    {
+      "id": 219,
+      "category": "Silly & Absurd",
+      "option_a": "Have a permanent goofy grin",
+      "option_b": "Have permanently raised eyebrows"
+    },
+    {
+      "id": 220,
+      "category": "Silly & Absurd",
+      "option_a": "Wake up with a random new hairstyle every day",
+      "option_b": "Wake up wearing random new socks every day"
+    },
+    {
+      "id": 221,
+      "category": "Silly & Absurd",
+      "option_a": "Speak with a different accent every week",
+      "option_b": "Speak in a whisper for a week"
+    },
+    {
+      "id": 222,
+      "category": "Silly & Absurd",
+      "option_a": "Have glitter fall out of your pockets everywhere you go",
+      "option_b": "Have bubbles float out of your ears when you laugh"
+    },
+    {
+      "id": 223,
+      "category": "Silly & Absurd",
+      "option_a": "Always land on your feet like a cat",
+      "option_b": "Always float gently like a feather when you fall"
+    },
+    {
+      "id": 224,
+      "category": "Everyday Life & Habits",
+      "option_a": "Wake up early every day",
+      "option_b": "Stay up late every night"
+    },
+    {
+      "id": 225,
+      "category": "Everyday Life & Habits",
+      "option_a": "Always be 10 minutes early",
+      "option_b": "Always be 10 minutes late"
+    },
+    {
+      "id": 226,
+      "category": "Everyday Life & Habits",
+      "option_a": "Have a messy room but know where everything is",
+      "option_b": "Have a clean room but never remember where things are"
+    },
+    {
+      "id": 227,
+      "category": "Everyday Life & Habits",
+      "option_a": "Make your bed every morning",
+      "option_b": "Never worry about making your bed"
+    },
+    {
+      "id": 228,
+      "category": "Everyday Life & Habits",
+      "option_a": "Take a shower in the morning",
+      "option_b": "Take a shower at night"
+    },
+    {
+      "id": 229,
+      "category": "Everyday Life & Habits",
+      "option_a": "Have a daily routine that never changes",
+      "option_b": "Have a life where every day is different"
+    },
+    {
+      "id": 230,
+      "category": "Everyday Life & Habits",
+      "option_a": "Always keep a to-do list",
+      "option_b": "Never plan ahead at all"
+    },
+    {
+      "id": 231,
+      "category": "Everyday Life & Habits",
+      "option_a": "Read before bed",
+      "option_b": "Watch a show before bed"
+    },
+    {
+      "id": 232,
+      "category": "Everyday Life & Habits",
+      "option_a": "Keep a journal every day",
+      "option_b": "Take a photo every day"
+    },
+    {
+      "id": 233,
+      "category": "Everyday Life & Habits",
+      "option_a": "Always pack a lunch",
+      "option_b": "Always buy lunch"
+    },
+    {
+      "id": 234,
+      "category": "Everyday Life & Habits",
+      "option_a": "Wake up to an alarm",
+      "option_b": "Wake up naturally whenever your body is ready"
+    },
+    {
+      "id": 235,
+      "category": "Everyday Life & Habits",
+      "option_a": "Have a lot of small errands to do",
+      "option_b": "Have one big task to finish"
+    },
+    {
+      "id": 236,
+      "category": "Everyday Life & Habits",
+      "option_a": "Organize everything with lists",
+      "option_b": "Keep everything in your head"
+    },
+    {
+      "id": 237,
+      "category": "Everyday Life & Habits",
+      "option_a": "Clean as you go",
+      "option_b": "Clean everything all at once at the end of the day"
+    },
+    {
+      "id": 238,
+      "category": "Everyday Life & Habits",
+      "option_a": "Have a strict bedtime",
+      "option_b": "Have no bedtime at all"
+    },
+    {
+      "id": 239,
+      "category": "Everyday Life & Habits",
+      "option_a": "Walk everywhere you need to go",
+      "option_b": "Always have a ride"
+    },
+    {
+      "id": 240,
+      "category": "Everyday Life & Habits",
+      "option_a": "Plan your outfits the night before",
+      "option_b": "Decide what to wear in the morning"
+    },
+    {
+      "id": 241,
+      "category": "Everyday Life & Habits",
+      "option_a": "Always double check your work",
+      "option_b": "Trust your first answer"
+    },
+    {
+      "id": 242,
+      "category": "Everyday Life & Habits",
+      "option_a": "Take the stairs for the rest of your life",
+      "option_b": "Take the elevator for the rest of your life"
+    },
+    {
+      "id": 243,
+      "category": "Everyday Life & Habits",
+      "option_a": "Have a quiet morning routine",
+      "option_b": "Have an energetic morning routine"
+    },
+    {
+      "id": 244,
+      "category": "Everyday Life & Habits",
+      "option_a": "Keep your phone on silent all the time",
+      "option_b": "Keep the volume on loud all the time"
+    },
+    {
+      "id": 245,
+      "category": "Everyday Life & Habits",
+      "option_a": "Always finish one task before starting another",
+      "option_b": "Juggle many tasks at once"
+    },
+    {
+      "id": 246,
+      "category": "Holidays & Celebrations",
+      "option_a": "Celebrate your birthday with a big party",
+      "option_b": "Celebrate with a quiet day with close family"
+    },
+    {
+      "id": 247,
+      "category": "Holidays & Celebrations",
+      "option_a": "Get one big gift",
+      "option_b": "Get several small gifts"
+    },
+    {
+      "id": 248,
+      "category": "Holidays & Celebrations",
+      "option_a": "Have a summer birthday",
+      "option_b": "Have a winter birthday"
+    },
+    {
+      "id": 249,
+      "category": "Holidays & Celebrations",
+      "option_a": "Spend the holidays traveling",
+      "option_b": "Spend the holidays at home"
+    },
+    {
+      "id": 250,
+      "category": "Holidays & Celebrations",
+      "option_a": "Decorate for every holiday",
+      "option_b": "Skip decorations but still celebrate"
+    },
+    {
+      "id": 251,
+      "category": "Holidays & Celebrations",
+      "option_a": "Have a surprise party thrown for you",
+      "option_b": "Plan your own party exactly how you want it"
+    },
+    {
+      "id": 252,
+      "category": "Holidays & Celebrations",
+      "option_a": "Get presents on your birthday",
+      "option_b": "Get to give presents on your birthday"
+    },
+    {
+      "id": 253,
+      "category": "Holidays & Celebrations",
+      "option_a": "Celebrate with a big family gathering",
+      "option_b": "Celebrate with a small group of close friends"
+    },
+    {
+      "id": 254,
+      "category": "Holidays & Celebrations",
+      "option_a": "Have fireworks at every celebration",
+      "option_b": "Have a bonfire at every celebration"
+    },
+    {
+      "id": 255,
+      "category": "Holidays & Celebrations",
+      "option_a": "Bake a holiday treat from scratch",
+      "option_b": "Buy one from a bakery"
+    },
+    {
+      "id": 256,
+      "category": "Holidays & Celebrations",
+      "option_a": "Spend a holiday somewhere new",
+      "option_b": "Spend it the same way every year"
+    },
+    {
+      "id": 257,
+      "category": "Holidays & Celebrations",
+      "option_a": "Get a stocking full of small gifts",
+      "option_b": "Get one big gift under the tree"
+    },
+    {
+      "id": 258,
+      "category": "Holidays & Celebrations",
+      "option_a": "Have a costume party",
+      "option_b": "Have a themed dinner party"
+    },
+    {
+      "id": 259,
+      "category": "Holidays & Celebrations",
+      "option_a": "Celebrate a holiday for a whole week",
+      "option_b": "Celebrate with just one really big day"
+    },
+    {
+      "id": 260,
+      "category": "Holidays & Celebrations",
+      "option_a": "Send handmade cards",
+      "option_b": "Send store-bought cards"
+    },
+    {
+      "id": 261,
+      "category": "Holidays & Celebrations",
+      "option_a": "Host the holiday gathering at your house",
+      "option_b": "Travel to someone else's house"
+    },
+    {
+      "id": 262,
+      "category": "Holidays & Celebrations",
+      "option_a": "Have a New Year's countdown with fireworks",
+      "option_b": "Have a quiet New Year's at home"
+    },
+    {
+      "id": 263,
+      "category": "Holidays & Celebrations",
+      "option_a": "Get to plan the holiday menu",
+      "option_b": "Get to plan the holiday games"
+    },
+    {
+      "id": 264,
+      "category": "Music & Arts",
+      "option_a": "Be able to sing beautifully",
+      "option_b": "Be able to play any instrument perfectly"
+    },
+    {
+      "id": 265,
+      "category": "Music & Arts",
+      "option_a": "Paint a masterpiece",
+      "option_b": "Write a bestselling novel"
+    },
+    {
+      "id": 266,
+      "category": "Music & Arts",
+      "option_a": "Perform on stage in front of thousands",
+      "option_b": "Create art alone in a quiet studio"
+    },
+    {
+      "id": 267,
+      "category": "Music & Arts",
+      "option_a": "Only listen to music with lyrics",
+      "option_b": "Only listen to instrumental music"
+    },
+    {
+      "id": 268,
+      "category": "Music & Arts",
+      "option_a": "Learn to dance any style perfectly",
+      "option_b": "Learn to draw anything perfectly"
+    },
+    {
+      "id": 269,
+      "category": "Music & Arts",
+      "option_a": "Have perfect pitch",
+      "option_b": "Have perfect rhythm"
+    },
+    {
+      "id": 270,
+      "category": "Music & Arts",
+      "option_a": "Be in a band",
+      "option_b": "Be a solo artist"
+    },
+    {
+      "id": 271,
+      "category": "Music & Arts",
+      "option_a": "Design your own album cover",
+      "option_b": "Design your own book cover"
+    },
+    {
+      "id": 272,
+      "category": "Music & Arts",
+      "option_a": "Perform your own songs",
+      "option_b": "Perform songs written by others"
+    },
+    {
+      "id": 273,
+      "category": "Music & Arts",
+      "option_a": "Be a famous painter",
+      "option_b": "Be a famous sculptor"
+    },
+    {
+      "id": 274,
+      "category": "Music & Arts",
+      "option_a": "Have your artwork displayed in a museum",
+      "option_b": "Have your song played on the radio"
+    },
+    {
+      "id": 275,
+      "category": "Music & Arts",
+      "option_a": "Learn to play piano",
+      "option_b": "Learn to play guitar"
+    },
+    {
+      "id": 276,
+      "category": "Music & Arts",
+      "option_a": "Write poetry",
+      "option_b": "Write short stories"
+    },
+    {
+      "id": 277,
+      "category": "Music & Arts",
+      "option_a": "Take photographs of nature",
+      "option_b": "Take photographs of people"
+    },
+    {
+      "id": 278,
+      "category": "Music & Arts",
+      "option_a": "Be able to draw realistic portraits",
+      "option_b": "Be able to draw wild imaginative creatures"
+    },
+    {
+      "id": 279,
+      "category": "Music & Arts",
+      "option_a": "Compose your own music",
+      "option_b": "Choreograph your own dance"
+    },
+    {
+      "id": 280,
+      "category": "Music & Arts",
+      "option_a": "Sing in a choir",
+      "option_b": "Play in an orchestra"
+    },
+    {
+      "id": 281,
+      "category": "Music & Arts",
+      "option_a": "Have unlimited art supplies",
+      "option_b": "Have unlimited music lessons"
+    },
+    {
+      "id": 282,
+      "category": "Music & Arts",
+      "option_a": "Create a mural on a huge wall",
+      "option_b": "Create a tiny, highly detailed painting"
+    },
+    {
+      "id": 283,
+      "category": "Music & Arts",
+      "option_a": "Be known for your singing voice",
+      "option_b": "Be known for your songwriting"
+    },
+    {
+      "id": 284,
+      "category": "Friends & Family",
+      "option_a": "Have one best friend",
+      "option_b": "Have a big group of good friends"
+    },
+    {
+      "id": 285,
+      "category": "Friends & Family",
+      "option_a": "Live close to family",
+      "option_b": "Live far away but visit often"
+    },
+    {
+      "id": 286,
+      "category": "Friends & Family",
+      "option_a": "Have an older sibling",
+      "option_b": "Have a younger sibling"
+    },
+    {
+      "id": 287,
+      "category": "Friends & Family",
+      "option_a": "Share a room with a sibling",
+      "option_b": "Have your own room"
+    },
+    {
+      "id": 288,
+      "category": "Friends & Family",
+      "option_a": "Have family game night every week",
+      "option_b": "Have family movie night every week"
+    },
+    {
+      "id": 289,
+      "category": "Friends & Family",
+      "option_a": "Take one big family vacation",
+      "option_b": "Take many small weekend trips"
+    },
+    {
+      "id": 290,
+      "category": "Friends & Family",
+      "option_a": "Have a huge extended family gathering",
+      "option_b": "Have a small, quiet gathering"
+    },
+    {
+      "id": 291,
+      "category": "Friends & Family",
+      "option_a": "Get advice from a parent",
+      "option_b": "Figure things out on your own"
+    },
+    {
+      "id": 292,
+      "category": "Friends & Family",
+      "option_a": "Have friends who are very different from you",
+      "option_b": "Have friends who are a lot like you"
+    },
+    {
+      "id": 293,
+      "category": "Friends & Family",
+      "option_a": "Have a friend who always tells you the truth",
+      "option_b": "Have a friend who always makes you laugh"
+    },
+    {
+      "id": 294,
+      "category": "Friends & Family",
+      "option_a": "Grow up with lots of cousins",
+      "option_b": "Grow up as an only grandchild"
+    },
+    {
+      "id": 295,
+      "category": "Friends & Family",
+      "option_a": "Have a family tradition passed down for generations",
+      "option_b": "Start a brand new tradition of your own"
+    },
+    {
+      "id": 296,
+      "category": "Friends & Family",
+      "option_a": "Live with roommates",
+      "option_b": "Live alone"
+    },
+    {
+      "id": 297,
+      "category": "Friends & Family",
+      "option_a": "Have a friend group that keeps growing",
+      "option_b": "Have the same close friends for life"
+    },
+    {
+      "id": 298,
+      "category": "Friends & Family",
+      "option_a": "Talk to your family every day",
+      "option_b": "Talk deeply once a week"
+    },
+    {
+      "id": 299,
+      "category": "Friends & Family",
+      "option_a": "Have a surprise visit from family",
+      "option_b": "Have a planned visit you can prepare for"
+    },
+    {
+      "id": 300,
+      "category": "Friends & Family",
+      "option_a": "Help your family with chores",
+      "option_b": "Help a friend with a big project"
+    },
+    {
+      "id": 301,
+      "category": "Friends & Family",
+      "option_a": "Have a family pet everyone shares",
+      "option_b": "Have your own personal pet"
+    },
+    {
+      "id": 302,
+      "category": "Friends & Family",
+      "option_a": "Celebrate milestones with a big party",
+      "option_b": "Celebrate with a quiet dinner"
+    },
+    {
+      "id": 303,
+      "category": "Friends & Family",
+      "option_a": "Have a mentor who guides you",
+      "option_b": "Figure it out through trial and error"
+    },
+    {
+      "id": 304,
+      "category": "Weather & Seasons",
+      "option_a": "Live somewhere sunny all year",
+      "option_b": "Live somewhere with four distinct seasons"
+    },
+    {
+      "id": 305,
+      "category": "Weather & Seasons",
+      "option_a": "Have a white Christmas every year",
+      "option_b": "Have a beach Christmas every year"
+    },
+    {
+      "id": 306,
+      "category": "Weather & Seasons",
+      "option_a": "Experience a big snowstorm",
+      "option_b": "Experience a big rainstorm"
+    },
+    {
+      "id": 307,
+      "category": "Weather & Seasons",
+      "option_a": "Live somewhere with mild weather all year",
+      "option_b": "Live somewhere with dramatic weather changes"
+    },
+    {
+      "id": 308,
+      "category": "Weather & Seasons",
+      "option_a": "Wake up to sunshine every day",
+      "option_b": "Wake up to gentle rain every day"
+    },
+    {
+      "id": 309,
+      "category": "Weather & Seasons",
+      "option_a": "Have summer be six months long",
+      "option_b": "Have winter be six months long"
+    },
+    {
+      "id": 310,
+      "category": "Weather & Seasons",
+      "option_a": "Watch a thunderstorm from a cozy window",
+      "option_b": "Watch a snowstorm from a cozy window"
+    },
+    {
+      "id": 311,
+      "category": "Weather & Seasons",
+      "option_a": "Live somewhere it never rains",
+      "option_b": "Live somewhere it never snows"
+    },
+    {
+      "id": 312,
+      "category": "Weather & Seasons",
+      "option_a": "Feel the first snow of winter",
+      "option_b": "Feel the first warm day of spring"
+    },
+    {
+      "id": 313,
+      "category": "Weather & Seasons",
+      "option_a": "Have autumn leaves to jump in",
+      "option_b": "Have summer waves to swim in"
+    },
+    {
+      "id": 314,
+      "category": "Weather & Seasons",
+      "option_a": "Wake up to fog every morning",
+      "option_b": "Wake up to frost every morning"
+    },
+    {
+      "id": 315,
+      "category": "Weather & Seasons",
+      "option_a": "Have a job that lets you work outside in nice weather",
+      "option_b": "Have a job that keeps you inside no matter the weather"
+    },
+    {
+      "id": 316,
+      "category": "Weather & Seasons",
+      "option_a": "Watch a sunrise every day",
+      "option_b": "Watch a sunset every day"
+    },
+    {
+      "id": 317,
+      "category": "Weather & Seasons",
+      "option_a": "Live somewhere windy",
+      "option_b": "Live somewhere humid"
+    },
+    {
+      "id": 318,
+      "category": "Weather & Seasons",
+      "option_a": "Build a snowman every winter",
+      "option_b": "Build a sandcastle every summer"
+    },
+    {
+      "id": 319,
+      "category": "Weather & Seasons",
+      "option_a": "Have a rainy weekend to stay in and relax",
+      "option_b": "Have a sunny weekend full of plans"
+    },
+    {
+      "id": 320,
+      "category": "Weather & Seasons",
+      "option_a": "Wear shorts all year",
+      "option_b": "Wear sweaters all year"
+    },
+    {
+      "id": 321,
+      "category": "Weather & Seasons",
+      "option_a": "Chase storms to learn about weather",
+      "option_b": "Study calm weather patterns from a lab"
+    },
+    {
+      "id": 322,
+      "category": "Space & Sci-Fi",
+      "option_a": "Travel to Mars",
+      "option_b": "Travel to the Moon"
+    },
+    {
+      "id": 323,
+      "category": "Space & Sci-Fi",
+      "option_a": "Live on a space station",
+      "option_b": "Live on a distant planet"
+    },
+    {
+      "id": 324,
+      "category": "Space & Sci-Fi",
+      "option_a": "Meet a friendly alien",
+      "option_b": "Discover a planet with no life at all"
+    },
+    {
+      "id": 325,
+      "category": "Space & Sci-Fi",
+      "option_a": "Travel faster than light",
+      "option_b": "Travel back in time"
+    },
+    {
+      "id": 326,
+      "category": "Space & Sci-Fi",
+      "option_a": "Pilot your own spaceship",
+      "option_b": "Command a whole space fleet"
+    },
+    {
+      "id": 327,
+      "category": "Space & Sci-Fi",
+      "option_a": "Explore a black hole from a safe distance",
+      "option_b": "Fly through an asteroid field"
+    },
+    {
+      "id": 328,
+      "category": "Space & Sci-Fi",
+      "option_a": "Live in a world with robots as helpers",
+      "option_b": "Live in a world with no machines at all"
+    },
+    {
+      "id": 329,
+      "category": "Space & Sci-Fi",
+      "option_a": "Discover a new planet",
+      "option_b": "Discover a new star"
+    },
+    {
+      "id": 330,
+      "category": "Space & Sci-Fi",
+      "option_a": "Have a robot companion on space missions",
+      "option_b": "Have a trained animal companion on space missions"
+    },
+    {
+      "id": 331,
+      "category": "Space & Sci-Fi",
+      "option_a": "Wear a spacesuit and walk on the Moon",
+      "option_b": "Pilot a rover exploring Mars"
+    },
+    {
+      "id": 332,
+      "category": "Space & Sci-Fi",
+      "option_a": "Build a colony on another planet",
+      "option_b": "Build a floating city in the clouds"
+    },
+    {
+      "id": 333,
+      "category": "Space & Sci-Fi",
+      "option_a": "Watch Earth from space",
+      "option_b": "Watch a distant galaxy up close"
+    },
+    {
+      "id": 334,
+      "category": "Space & Sci-Fi",
+      "option_a": "Have technology that lets you breathe anywhere",
+      "option_b": "Have technology that lets you survive any temperature"
+    },
+    {
+      "id": 335,
+      "category": "Space & Sci-Fi",
+      "option_a": "Be the first person to reach a new planet",
+      "option_b": "Be the first person to build a home there"
+    },
+    {
+      "id": 336,
+      "category": "Space & Sci-Fi",
+      "option_a": "See a comet streak across the sky",
+      "option_b": "See the rings of Saturn up close"
+    },
+    {
+      "id": 337,
+      "category": "Space & Sci-Fi",
+      "option_a": "Travel through a wormhole",
+      "option_b": "Travel on a generation ship for years"
+    },
+    {
+      "id": 338,
+      "category": "Space & Sci-Fi",
+      "option_a": "Live where gravity is much weaker",
+      "option_b": "Live where a day lasts a whole month"
+    },
+    {
+      "id": 339,
+      "category": "Space & Sci-Fi",
+      "option_a": "Discover life on another planet",
+      "option_b": "Discover a way to travel anywhere instantly"
+    },
+    {
+      "id": 340,
+      "category": "Space & Sci-Fi",
+      "option_a": "Have your own telescope to study the stars",
+      "option_b": "Have your own rocket to visit them"
+    },
+    {
+      "id": 341,
+      "category": "Space & Sci-Fi",
+      "option_a": "Be a scientist studying space from Earth",
+      "option_b": "Be an astronaut exploring it firsthand"
+    }
+  ]
+}
